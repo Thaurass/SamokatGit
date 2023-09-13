@@ -1,5 +1,7 @@
+using System.ComponentModel.Design;
 using System.Reflection.Metadata;
 using System.Security.Cryptography;
+using static samokat.Program;
 
 namespace samokat;
 
@@ -65,20 +67,32 @@ public class Account
 
     private static void Login()
     {
-        Console.WriteLine("Введите логин:");
-        string login = Console.ReadLine();
-        Console.WriteLine("Введите пароль:");
-        string password = Console.ReadLine();
+        bool log = false;
+        while (!log)
+        {
+            Console.WriteLine("Введите логин:");
+            string login = Console.ReadLine();
+            Console.WriteLine("Введите пароль:");
+            string password = Console.ReadLine();
 
-        // if (Users.Contains(user => user.Name.Contains(login)))
-        // {
-        //     
-        // }
+            if (Users.Contains(Users.Find(user => user.Name == login)) && 
+                Users.Contains(Users.Find(user => user.Password == password)))
+            {
+                Console.WriteLine("Вы успешно вошли в аккаунт");
+                log = true;
+                Menu();
+            }
+            else
+            {
+                Console.WriteLine("Неверный логин или пороль");
+            }
+        }
+
 
         //Users.Find(user => user.Name.Contains(login)).Name;
-        
+
     }
-    
+
     private static void Register()
     {
         
@@ -91,7 +105,11 @@ public class Account
         
         Users.Add(new User(login, password, Convert.ToInt32(age)));
         
-        Console.WriteLine($"Регистрация прошла успешно, {Users.Find(user => user.Name.Contains(login)).Name}");
-        
+        Console.WriteLine($"Регистрация прошла успешно");
+        Console.WriteLine("Нажжмите чтобы продолжить");
+        Console.ReadKey();
+        StartScreen();
+
+
     }
 }

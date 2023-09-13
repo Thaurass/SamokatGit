@@ -7,15 +7,16 @@ namespace samokat // Note: actual namespace depends on the project name.
         static void Main(string[] args)
         {
             StartScreen();
+
         }
 
-        
 
-        static void Menu()
+
+        protected internal static void Menu()
         {
             Console.Clear();
             Console.WriteLine("Главное меню:");
-            Console.WriteLine("Стоимость поездки 5 рублей за одну минуту");
+            //Console.WriteLine("Стоимость поездки 5 рублей за одну минуту");
             Console.WriteLine("1. Арендовать самокат");
             Console.WriteLine("2. Забронировать самокат");
             Console.WriteLine("3. Выйти");
@@ -35,7 +36,7 @@ namespace samokat // Note: actual namespace depends on the project name.
                         stop = true;
                         break;
                     case "3":
-                        Environment.Exit(0);
+                        StartScreen();
                         stop = true;
                         break;
                     default:
@@ -49,6 +50,7 @@ namespace samokat // Note: actual namespace depends on the project name.
         static void Rent()
         {
             Console.Clear();
+            Console.WriteLine("Для вас есть следующие типы самокатов");
             Console.WriteLine("Введите время аренды самоката:");
         }
         
