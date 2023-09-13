@@ -1,0 +1,15 @@
+/Users/persesma/RiderProjects/samokat/samokat/bin/Debug/net7.0/samokat
+/Users/persesma/RiderProjects/samokat/samokat/bin/Debug/net7.0/samokat.deps.json
+/Users/persesma/RiderProjects/samokat/samokat/bin/Debug/net7.0/samokat.runtimeconfig.json
+/Users/persesma/RiderProjects/samokat/samokat/bin/Debug/net7.0/samokat.dll
+/Users/persesma/RiderProjects/samokat/samokat/bin/Debug/net7.0/samokat.pdb
+/Users/persesma/RiderProjects/samokat/samokat/obj/Debug/net7.0/samokat.csproj.AssemblyReference.cache
+/Users/persesma/RiderProjects/samokat/samokat/obj/Debug/net7.0/samokat.GeneratedMSBuildEditorConfig.editorconfig
+/Users/persesma/RiderProjects/samokat/samokat/obj/Debug/net7.0/samokat.AssemblyInfoInputs.cache
+/Users/persesma/RiderProjects/samokat/samokat/obj/Debug/net7.0/samokat.AssemblyInfo.cs
+/Users/persesma/RiderProjects/samokat/samokat/obj/Debug/net7.0/samokat.csproj.CoreCompileInputs.cache
+/Users/persesma/RiderProjects/samokat/samokat/obj/Debug/net7.0/samokat.dll
+/Users/persesma/RiderProjects/samokat/samokat/obj/Debug/net7.0/refint/samokat.dll
+/Users/persesma/RiderProjects/samokat/samokat/obj/Debug/net7.0/samokat.pdb
+/Users/persesma/RiderProjects/samokat/samokat/obj/Debug/net7.0/samokat.genruntimeconfig.cache
+/Users/persesma/RiderProjects/samokat/samokat/obj/Debug/net7.0/ref/samokat.dll
