@@ -15,7 +15,6 @@ namespace samokat // Note: actual namespace depends on the project name.
         {
             Console.Clear();
             Console.WriteLine("Главное меню:");
-            Console.WriteLine("Стоимость поездки 5 рублей за одну минуту");
             Console.WriteLine("1. Арендовать самокат");
             Console.WriteLine("2. Забронировать самокат");
             Console.WriteLine("3. Выйти");
