@@ -11,7 +11,7 @@ namespace samokat // Note: actual namespace depends on the project name.
 
         
 
-        static void Menu()
+        protected internal static void Menu()
         {
             Console.Clear();
             Console.WriteLine("Главное меню:");
