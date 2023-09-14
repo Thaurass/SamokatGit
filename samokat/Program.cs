@@ -1,12 +1,14 @@
 ﻿using static samokat.Account;
+using static samokat.Whoosh;
 
-namespace samokat // Note: actual namespace depends on the project name.
+namespace samokat
 {
     internal abstract class Program
     {
         static void Main(string[] args)
         {
             StartScreen();
+            GenerateTransport();
         }
 
         

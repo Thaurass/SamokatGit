@@ -75,8 +75,10 @@ public class Account
             Console.WriteLine("Введите пароль:");
             string password = Console.ReadLine();
 
-            if (Users.Contains(Users.Find(user => user.Name == login)) && 
-                Users.Contains(Users.Find(user => user.Password == password)))
+            if (
+                Users.Contains(Users.Find(user => user.Name == login)) && 
+                Users.Contains(Users.Find(user => user.Password == password))
+                )
             {
                 Console.WriteLine("Вы успешно вошли в аккаунт");
                 log = true;
