@@ -7,7 +7,7 @@ namespace samokat;
 
 public class Account
 {
-    struct User
+    public struct User
     {
         public User(string name, string password, int age)
         {
@@ -15,20 +15,29 @@ public class Account
             Password = password;
             Age = age;
             Balance = 0;
+            Distance = 0;
+            Time = 0;
+
         }
 
         public string Name { get; }
         public string Password { get; }
         public int Age { get; }
-        public double Balance { get; }
+        public double Balance { get; set; }
+        public double Distance { get; set; }
+        public double Time { get; set; }
 
-        
+
+
+
         // private override string Register()
         // {
         //     return $"({_name}, {_password}, {_age}, {_balance})";
         // }
 
     }
+
+    public static User current = new();
     
     private static readonly List<User> Users = new();
     
@@ -70,21 +79,29 @@ public class Account
         bool log = false;
         while (!log)
         {
+            Console.Clear();
             Console.WriteLine("Введите логин:");
             string login = Console.ReadLine();
             Console.WriteLine("Введите пароль:");
             string password = Console.ReadLine();
 
-            if (Users.Contains(Users.Find(user => user.Name == login)) && 
-                Users.Contains(Users.Find(user => user.Password == password)))
+            if (Users.Contains(Users.Find(user => user.Name == login && user.Password == password)))
             {
+                current = Users.Find(user => user.Name == login && user.Password == password);
                 Console.WriteLine("Вы успешно вошли в аккаунт");
                 log = true;
                 Menu();
             }
             else
             {
-                Console.WriteLine("Неверный логин или пороль");
+                Console.WriteLine("Неверный логин или пороль, если вы его забыли нажмите : 1 для выхода");
+                Console.WriteLine("Или любую другую клавишу, чтобы продолжить");
+
+                if (1 == Convert.ToInt32(Console.ReadLine()))
+                {
+                    StartScreen();
+                }
+                
             }
         }
 
