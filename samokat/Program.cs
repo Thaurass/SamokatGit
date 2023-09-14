@@ -1,23 +1,23 @@
 ﻿using System.Reflection.Metadata;
 using static samokat.Account;
+using static samokat.Whoosh;
 
-namespace samokat // Note: actual namespace depends on the project name.
+namespace samokat
 {
     internal abstract class Program
     {
         static void Main(string[] args)
         {
             StartScreen();
-
+            GenerateTransport();
         }
 
-
+        
 
         protected internal static void Menu()
         {
             Console.Clear();
             Console.WriteLine("Главное меню:");
-            //Console.WriteLine("Стоимость поездки 5 рублей за одну минуту");
             Console.WriteLine("1. Арендовать самокат");
             Console.WriteLine("2. Забронировать самокат");
             Console.WriteLine("3. Профиль");
