@@ -1,5 +1,4 @@
-﻿using System.Reflection.Metadata;
-using static samokat.Account;
+﻿using static samokat.Account;
 using static samokat.Whoosh;
 
 namespace samokat
@@ -8,11 +7,9 @@ namespace samokat
     {
         static void Main(string[] args)
         {
-            StartScreen();
             GenerateTransport();
+            StartScreen();
         }
-
-        
 
         protected internal static void Menu()
         {
@@ -22,7 +19,8 @@ namespace samokat
             Console.WriteLine("2. Забронировать самокат");
             Console.WriteLine("3. Профиль");
             Console.WriteLine("4. Пополнить баланс");
-            Console.WriteLine("5. Выйти");
+            Console.WriteLine("5. Ввести промокод");
+            Console.WriteLine("6. Выйти");
 
             bool stop = false;
             while (!stop)
@@ -47,6 +45,10 @@ namespace samokat
                         stop = true;
                         break;
                     case "5":
+                        ChangePromo();
+                        stop = true;
+                        break;
+                    case "6":
                         StartScreen();
                         stop = true;
                         break;
@@ -74,7 +76,9 @@ namespace samokat
         static void Book()
         {
             Console.Clear();
-            Console.WriteLine("Введите время бронирования самоката:");
+            Console.WriteLine("Через сколько минут вам нужен самокат:");
+            int TimeToStart = Convert.ToInt32(Console.ReadLine());
+            
             Menu();
         }
         static void Balance()
@@ -108,6 +112,17 @@ namespace samokat
             Console.ReadKey();
             Menu();
         }
+
+        static void ChangePromo()
+        {
+            Console.WriteLine("Введите промокод:");
+            current.PromotionalCode = Console.ReadLine();
+            
+            Console.WriteLine("Нажмите чтобы выйти");
+            Console.ReadKey();
+            Menu();
+        }
+        
         static void deposit()
         {
             Console.Clear();

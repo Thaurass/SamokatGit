@@ -1,6 +1,3 @@
-using System.ComponentModel.Design;
-using System.Reflection.Metadata;
-using System.Security.Cryptography;
 using static samokat.Program;
 
 namespace samokat;
@@ -17,7 +14,8 @@ public class Account
             Balance = 0;
             Distance = 0;
             Time = 0;
-
+            NumTrips = 0;
+            PromotionalCode = "";
         }
 
         public string Name { get; }
@@ -26,6 +24,8 @@ public class Account
         public double Balance { get; set; }
         public double Distance { get; set; }
         public double Time { get; set; }
+        public int NumTrips { get; set; }
+        public string PromotionalCode { get; set; }
 
 
 
@@ -84,15 +84,10 @@ public class Account
             string login = Console.ReadLine();
             Console.WriteLine("Введите пароль:");
             string password = Console.ReadLine();
-
-<<<<<<< HEAD
+            
             if (Users.Contains(Users.Find(user => user.Name == login && user.Password == password)))
-=======
-            if (
-                Users.Contains(Users.Find(user => user.Name == login)) && 
-                Users.Contains(Users.Find(user => user.Password == password))
-                )
->>>>>>> 824ecf312bb019c77bc7f79176dbd6e754afe04e
+
+
             {
                 current = Users.Find(user => user.Name == login && user.Password == password);
                 Console.WriteLine("Вы успешно вошли в аккаунт");
