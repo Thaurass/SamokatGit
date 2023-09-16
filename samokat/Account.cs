@@ -87,20 +87,6 @@ public class Account
 
 
             if (Users.Contains(Users.Find(user => user.Name == login && user.Password == password)))
-=======
-            if (
-                Users.Contains(Users.Find(user => user.Name == login)) && 
-                Users.Contains(Users.Find(user => user.Password == password))
-                )
->>>>>>> 824ecf312bb019c77bc7f79176dbd6e754afe04e
-                Users.Contains(Users.Find(user => user.Name == login)) && 
-                Users.Contains(Users.Find(user => user.Password == password))
-                )
->>>>>>> 824ecf312bb019c77bc7f79176dbd6e754afe04e
-                Users.Contains(Users.Find(user => user.Name == login)) && 
-                Users.Contains(Users.Find(user => user.Password == password))
-                )
->>>>>>> 824ecf312bb019c77bc7f79176dbd6e754afe04e
             {
                 current = Users.Find(user => user.Name == login && user.Password == password);
                 Console.WriteLine("Вы успешно вошли в аккаунт");
