@@ -3,13 +3,15 @@
 
 namespace samokat
 {
-    internal class Whoosh
+    public class Whoosh
     {
-        struct Transport
+        public struct Transport
         {
-            public Transport(int number, int type)
+            public Transport(int number, int type, int index)
             {
                 Type = type;
+                Index = index;
+
                 switch (Type)
                 {
                     case 1:
@@ -32,10 +34,13 @@ namespace samokat
             private int Type { get; }
             public int Costs { get; }
             public int Speed { get; }
-            
+            public int Index { get; }
+
+
         }
-        
-        private static readonly List<Transport> Scooters = new();
+        public static Transport cur = new();
+
+        public static List<Transport> Scooters = new();
 
         internal static void GenerateTransport()
         {
@@ -43,7 +48,7 @@ namespace samokat
             
             for (int i = 0; i < 10; i++)
             {
-                Scooters.Add(new Transport(i, rnd.Next(1, 3)));
+                Scooters.Add(new Transport(i, rnd.Next(1, 3),i));
                 Console.WriteLine(Scooters[i].Number);
             }
         }

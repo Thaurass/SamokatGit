@@ -8,8 +8,8 @@ namespace samokat
     {
         static void Main(string[] args)
         {
-            StartScreen();
             GenerateTransport();
+            StartScreen();
         }
 
         
@@ -58,16 +58,47 @@ namespace samokat
 
         }
 
+
         static void Rent()
         {
             Console.Clear();
             Console.WriteLine("Для вас есть следующие типы самокатов");
-            //
-            //
-            Console.WriteLine("Введите время аренды самоката:");
-            //
-            //
-            Console.WriteLine("Хорошей поездки!");
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(" Номер " + Scooters[i].Number + " Заряд " + Scooters[i].Charge);
+            }
+            Console.WriteLine("Введите номер желаймого самоката:");
+            string Number = Console.ReadLine();
+            if (Scooters.Contains(Scooters.Find(Transport => Transport.Number == Number)))
+            {
+                cur = Scooters.Find(Transport => Transport.Number == Number);
+                Console.WriteLine("Введите время аренды самоката:");
+                Console.WriteLine("Доступное время до " + Convert.ToInt32((cur.Charge/(cur.Speed-5)) * 60) + "минут");
+                int tm = Convert.ToInt32(Console.ReadLine());
+                if (tm * cur.Costs > current.Balance)
+                {
+                    Console.WriteLine("У вас недостаточно средств пополните баланс");
+                    Console.WriteLine("Нажмите чтобы продолжить");
+                    Console.ReadKey();
+                    Menu();
+                }
+                else
+                {
+                    current.Time += tm;
+                    current.Distance += tm * (cur.Speed - 5);
+                    cur.Charge -= tm / 60 * (cur.Speed - 5);
+                    Scooters[cur.Index] = cur;
+
+                    Console.WriteLine("Цена вашей поездки составить " + tm * cur.Costs);
+                    Console.WriteLine("Хорошей поездки!");
+                    Console.WriteLine("Нажмите чтобы продолжить");
+                    Console.ReadKey();
+                }
+            }
+            else 
+            {
+                Console.WriteLine("Такой самокат отсутствует");
+            }
             Menu();
         }
         
