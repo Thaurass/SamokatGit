@@ -11,7 +11,7 @@ public class Account
             Name = name;
             Password = password;
             Age = age;
-            Balance = 0;
+            Balance = 100000;
             Distance = 0;
             Time = 0;
             NumTrips = 0;
@@ -38,7 +38,10 @@ public class Account
     }
 
     public static User current = new();
-    
+
+    public static string promo = "FREE";
+
+
     private static readonly List<User> Users = new();
     
     protected internal static void StartScreen()

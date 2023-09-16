@@ -14,23 +14,23 @@
                     case 1:
                         Number = $"{number}A";
                         Costs = 5;
-                        Charge = 30;
+                        Charge = 30000;
                         Speed = 15;
                         break;
                     case 2:
                         Number = $"{number}B";
                         Costs = 7;
-                        Charge = 20;
+                        Charge = 20000;
                         Speed = 25;
                         break;
                 }
             }
 
             public string Number { get; }
-            public int Charge { get; set; }
+            public double Charge { get; set; }
             private int Type { get; }
             public int Costs { get; }
-            public int Speed { get; }
+            public double Speed { get; }
             public int Index { get; }
 
 
