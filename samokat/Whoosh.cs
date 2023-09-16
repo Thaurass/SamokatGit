@@ -1,7 +1,4 @@
-﻿using System;
-
-
-namespace samokat
+﻿namespace samokat
 {
     public class Whoosh
     {
@@ -52,7 +49,5 @@ namespace samokat
                 Console.WriteLine(Scooters[i].Number);
             }
         }
-        
-        
     }
 }
