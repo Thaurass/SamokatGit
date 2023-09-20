@@ -4,23 +4,22 @@
     {
         public struct Transport
         {
-            public Transport(int number, int type, int index)
+            public Transport(int number, int type, int index, double charge)
             {
                 Type = type;
                 Index = index;
+                Charge = charge;
 
                 switch (Type)
                 {
                     case 1:
                         Number = $"{number}A";
                         Costs = 5;
-                        Charge = 30000;
                         Speed = 15;
                         break;
                     case 2:
                         Number = $"{number}B";
                         Costs = 7;
-                        Charge = 20000;
                         Speed = 25;
                         break;
                 }
@@ -45,7 +44,7 @@
             
             for (int i = 0; i < 10; i++)
             {
-                Scooters.Add(new Transport(i, rnd.Next(1, 3),i));
+                Scooters.Add(new Transport(i, rnd.Next(1, 3),i,20000));
                 Console.WriteLine(Scooters[i].Number);
             }
         }

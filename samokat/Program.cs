@@ -1,4 +1,5 @@
 ﻿using System.Text.Encodings.Web;
+using System.Xml.Linq;
 using static samokat.Account;
 using static samokat.Whoosh;
 
@@ -8,7 +9,6 @@ namespace samokat
     {
         static void Main(string[] args)
         {
-            GenerateTransport();
             StartScreen();
         }
 
@@ -17,11 +17,10 @@ namespace samokat
             Console.Clear();
             Console.WriteLine("Главное меню:");
             Console.WriteLine("1. Арендовать самокат");
-            Console.WriteLine("2. Забронировать самокат");
-            Console.WriteLine("3. Профиль");
-            Console.WriteLine("4. Пополнить баланс");
-            Console.WriteLine("5. Ввести промокод");
-            Console.WriteLine("6. Выйти");
+            Console.WriteLine("2. Профиль");
+            Console.WriteLine("3. Пополнить баланс");
+            Console.WriteLine("4. Ввести промокод");
+            Console.WriteLine("5. Выйти");
 
             bool stop = false;
             while (!stop)
@@ -34,22 +33,19 @@ namespace samokat
                         stop = true;
                         break;
                     case "2":
-                        Book();
-                        stop = true;
-                        break;
-                    case "3":
                         Profile();
                         stop = true;
                         break;
-                    case "4":
+                    case "3":
                         deposit();
                         stop = true;
                         break;
-                    case "5":
+                    case "4":
                         ChangePromo();
                         stop = true;
                         break;
-                    case "6":
+                    case "5":
+                        Save();
                         StartScreen();
                         stop = true;
                         break;
@@ -61,11 +57,39 @@ namespace samokat
 
         }
 
-
+        static void Save()
+        {
+            StreamWriter f = new StreamWriter("SAMOKAT.txt", false);
+            int i = 0;
+            while (i < 10)
+            {
+                string s0 = Scooters[i].Number.Remove(1);
+                string s1 = Scooters[i].Number;
+                if (s1[1] == 'A')
+                    s1 = "1";
+                else
+                    s1 = "2";
+                string s2 = ((double)(Scooters[i].Charge / 1000)).ToString();
+                f.WriteLine(s0 + " " + s1 + " " + s2);
+                i++;
+            }
+            f.Close();
+        }
         static void Rent()
         {
             Console.Clear();
             Console.WriteLine("Для вас есть следующие типы самокатов");
+            StreamReader f = new StreamReader("SAMOKAT.txt");
+            int j = 0;
+            while (!f.EndOfStream)
+            {
+                string s = f.ReadLine();
+                Scooters.Add(new Transport(Convert.ToInt32(s.Remove(1)), 
+                                           Convert.ToInt32(s.Substring(2, 2)), j, 
+                                           Convert.ToDouble(s.Substring(3)) * 1000));
+                j++;
+            }
+            f.Close();
             for (int i = 0; i < 10; i++)
             {
                 if ((double)(Scooters[i].Charge / 1000) > 0)
@@ -119,14 +143,6 @@ namespace samokat
             Menu();
         }
         
-        static void Book()
-        {
-            Console.Clear();
-            Console.WriteLine("Через сколько минут вам нужен самокат:");
-            int TimeToStart = Convert.ToInt32(Console.ReadLine());
-            
-            Menu();
-        }
         static void Profile()
         {
             Console.Clear();
@@ -142,18 +158,7 @@ namespace samokat
                 Console.ResetColor();
 
             }
-            Console.WriteLine("#######################################\r\n" +
-                              "#                                     #\r\n" +
-                              "#   #####   ######     ##     ######  #\r\n" +
-                              "#  ##   ##  # ## #    ####    # ## #  #\r\n" +
-                              "#  #          ##     ##  ##     ##    #\r\n" +
-                              "#   #####     ##     ##  ##     ##    #\r\n" +
-                              "#       ##    ##     ######     ##    #\r\n" +
-                              "#  ##   ##    ##     ##  ##     ##    #\r\n" +
-                              "#   #####    ####    ##  ##    ####   #\r\n" +
-                              "#                                     #\r\n" +
-                              "#######################################");
-
+            Print_Stat();
             Console.WriteLine("Вы проехали: {0:F2} км", current.Distance/1000);
             Console.WriteLine("Время в пути вместе: {0:#} минут", current.Time);
             
@@ -169,20 +174,7 @@ namespace samokat
             if (temp.Contains(promo) || temp.ToUpper().Contains(promo))
             {
                 current.PromotionalCode = temp;
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine(
-                  "##################################################################################################################\r\n" +
-                  "#                                                                                                                #\r\n" +
-                  "#  ######   ######    #####   ##   ##   #####              ##       ####   ######    ####    ##   ##   #######   #\r\n" +
-                  "#  ##  ##   ##  ##  ##   ##   ### ###  ##   ##            ####     ##  ##  # ## #     ##     ##   ##   ##   #    #\r\n" +
-                  "#  ##  ##   ##  ##  ##   ##   #######  ##   ##           ##  ##   ##         ##       ##      ## ##    ## #      #\r\n" +
-                  "#  #####    #####   ##   ##   #######  ##   ##           ##  ##   ##         ##       ##      ## ##    ####      #\r\n" +
-                  "#  ##       ## ##   ##   ##   ## # ##  ##   ##           ######   ##         ##       ##       ###     ## #      #\r\n" +
-                  "#  ##       ##  ##  ##   ##   ##   ##  ##   ##           ##  ##    ##  ##    ##       ##       ###     ##   #    #\r\n" +
-                  "#  ####    ####  ##  #####    ##   ##   #####            ##   ##    ####    ####     ####       #      #######   #\r\n" +
-                  "#                                                                                                                #\r\n" +
-                  "##################################################################################################################");
-                Console.ResetColor();
+                Print_Promo();
                 Console.WriteLine("Нажмите чтобы выйти");
             }else
             {
@@ -203,6 +195,37 @@ namespace samokat
 
             Console.ReadKey();
             Menu();
+        }
+        static void Print_Stat()
+        {
+            Console.WriteLine("#######################################\r\n" +
+                              "#                                     #\r\n" +
+                              "#   #####   ######     ##     ######  #\r\n" +
+                              "#  ##   ##  # ## #    ####    # ## #  #\r\n" +
+                              "#  #          ##     ##  ##     ##    #\r\n" +
+                              "#   #####     ##     ##  ##     ##    #\r\n" +
+                              "#       ##    ##     ######     ##    #\r\n" +
+                              "#  ##   ##    ##     ##  ##     ##    #\r\n" +
+                              "#   #####    ####    ##  ##    ####   #\r\n" +
+                              "#                                     #\r\n" +
+                              "#######################################");
+        }
+        static void Print_Promo()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(
+              "##################################################################################################################\r\n" +
+              "#                                                                                                                #\r\n" +
+              "#  ######   ######    #####   ##   ##   #####              ##       ####   ######    ####    ##   ##   #######   #\r\n" +
+              "#  ##  ##   ##  ##  ##   ##   ### ###  ##   ##            ####     ##  ##  # ## #     ##     ##   ##   ##   #    #\r\n" +
+              "#  ##  ##   ##  ##  ##   ##   #######  ##   ##           ##  ##   ##         ##       ##      ## ##    ## #      #\r\n" +
+              "#  #####    #####   ##   ##   #######  ##   ##           ##  ##   ##         ##       ##      ## ##    ####      #\r\n" +
+              "#  ##       ## ##   ##   ##   ## # ##  ##   ##           ######   ##         ##       ##       ###     ## #      #\r\n" +
+              "#  ##       ##  ##  ##   ##   ##   ##  ##   ##           ##  ##    ##  ##    ##       ##       ###     ##   #    #\r\n" +
+              "#  ####    ####  ##  #####    ##   ##   #####            ##   ##    ####    ####     ####       #      #######   #\r\n" +
+              "#                                                                                                                #\r\n" +
+              "##################################################################################################################");
+            Console.ResetColor();
         }
     }
 }
