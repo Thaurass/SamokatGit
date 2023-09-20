@@ -45,10 +45,7 @@ namespace samokat
                         stop = true;
                         break;
                     case "5":
-<<<<<<< HEAD
-=======
                         Save();
->>>>>>> master
                         StartScreen();
                         stop = true;
                         break;
