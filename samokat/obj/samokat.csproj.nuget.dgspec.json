@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Secret\\source\\repos\\SamokatGit\\samokat\\samokat.csproj": {}
+    "C:\\Users\\Secret\\Source\\Repos\\SamokatGit\\samokat\\samokat.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Secret\\source\\repos\\SamokatGit\\samokat\\samokat.csproj": {
+    "C:\\Users\\Secret\\Source\\Repos\\SamokatGit\\samokat\\samokat.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Secret\\source\\repos\\SamokatGit\\samokat\\samokat.csproj",
+        "projectUniqueName": "C:\\Users\\Secret\\Source\\Repos\\SamokatGit\\samokat\\samokat.csproj",
         "projectName": "samokat",
-        "projectPath": "C:\\Users\\Secret\\source\\repos\\SamokatGit\\samokat\\samokat.csproj",
+        "projectPath": "C:\\Users\\Secret\\Source\\Repos\\SamokatGit\\samokat\\samokat.csproj",
         "packagesPath": "C:\\Users\\Secret\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Secret\\source\\repos\\SamokatGit\\samokat\\obj\\",
+        "outputPath": "C:\\Users\\Secret\\Source\\Repos\\SamokatGit\\samokat\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
