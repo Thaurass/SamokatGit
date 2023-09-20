@@ -164,7 +164,7 @@ namespace samokat
 
         static void ChangePromo()
         {
-            Console.WriteLine("Введите промокод:");
+            Console.WriteLine("Введите промокод: ");
             string temp = Console.ReadLine();
             if (temp.Contains(promo) || temp.ToUpper().Contains(promo))
             {
