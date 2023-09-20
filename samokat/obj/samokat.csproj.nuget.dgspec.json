@@ -11,7 +11,7 @@
         "projectName": "samokat",
         "projectPath": "C:\\Users\\Secret\\source\\repos\\SamokatGit\\samokat\\samokat.csproj",
         "packagesPath": "C:\\Users\\Secret\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Secret\\Source\\Repos\\SamokatGit\\samokat\\obj\\",
+        "outputPath": "C:\\Users\\Secret\\source\\repos\\SamokatGit\\samokat\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
