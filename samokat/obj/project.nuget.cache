@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "lIeL48folwWOy0M+G8h8I9nQqisXBrAXpWzVzKfWMc1YXVHpwXEzqlwnQHhXq84VNJVa2DhW1L1wTBYVf54Hkg==",
+  "dgSpecHash": "ZMZCyOn9xxGH7freluybfx0Rv036riCjNgfowagwWegKgZx00ttZ26bB9QBfKrOGlnnKYug4TZXsgbE6EGJaSw==",
   "success": true,
-  "projectFilePath": "/Users/persesma/RiderProjects/samokat/samokat/samokat.csproj",
+  "projectFilePath": "C:\\Users\\Secret\\source\\repos\\SamokatGit\\samokat\\samokat.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Ошибка чтения файла кэша C:\\Users\\Secret\\source\\repos\\SamokatGit\\samokat\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
