@@ -101,7 +101,7 @@ public class Account
                 Console.WriteLine("Неверный логин или пороль, если вы его забыли нажмите : 1 для выхода");
                 Console.WriteLine("Или любую другую клавишу, чтобы продолжить");
 
-                if (1 == Convert.ToInt32(Console.ReadLine()))
+                if ("1" == Console.ReadLine())
                 {
                     StartScreen();
                 }
@@ -122,11 +122,17 @@ public class Account
         Console.WriteLine("Придумайте пароль:");
         string password = Console.ReadLine();
         Console.WriteLine("Введите свой возраст");
-        string age = Console.ReadLine();
+        if (Int32.TryParse(Console.ReadLine(), out int age))
+        {
+            Users.Add(new User(login, password, age));
         
-        Users.Add(new User(login, password, Convert.ToInt32(age)));
+            Console.WriteLine($"Регистрация прошла успешно");
+        }
+        else
+        {
+            Console.WriteLine($"Возраст должен быть введен в формате числа");
+        }
         
-        Console.WriteLine($"Регистрация прошла успешно");
         Console.WriteLine("Нажжмите чтобы продолжить");
         Console.ReadKey();
         StartScreen();

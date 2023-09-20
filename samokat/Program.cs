@@ -17,11 +17,10 @@ namespace samokat
             Console.Clear();
             Console.WriteLine("Главное меню:");
             Console.WriteLine("1. Арендовать самокат");
-            Console.WriteLine("2. Забронировать самокат");
-            Console.WriteLine("3. Профиль");
-            Console.WriteLine("4. Пополнить баланс");
-            Console.WriteLine("5. Ввести промокод");
-            Console.WriteLine("6. Выйти");
+            Console.WriteLine("2. Профиль");
+            Console.WriteLine("3. Пополнить баланс");
+            Console.WriteLine("4. Ввести промокод");
+            Console.WriteLine("5. Выйти");
 
             bool stop = false;
             while (!stop)
@@ -34,22 +33,18 @@ namespace samokat
                         stop = true;
                         break;
                     case "2":
-                        Book();
-                        stop = true;
-                        break;
-                    case "3":
                         Profile();
                         stop = true;
                         break;
-                    case "4":
+                    case "3":
                         deposit();
                         stop = true;
                         break;
-                    case "5":
+                    case "4":
                         ChangePromo();
                         stop = true;
                         break;
-                    case "6":
+                    case "5":
                         StartScreen();
                         stop = true;
                         break;
@@ -81,52 +76,53 @@ namespace samokat
                 Console.WriteLine("Введите время аренды самоката:");
                 int ChargeTm = Convert.ToInt32((cur.Charge / (cur.Speed - 5) / 1000) * 60);
                 Console.WriteLine("Доступное время до " + ChargeTm + " минут");
-                int tm = Convert.ToInt32(Console.ReadLine());
-                double t = tm;
-                if (tm * cur.Costs > current.Balance || tm >= ChargeTm)
+                if (Int32.TryParse(Console.ReadLine(), out int tm))
                 {
-                    if (tm * cur.Costs > current.Balance)
+                    double t = tm;
+                    if (tm * cur.Costs > current.Balance || tm >= ChargeTm)
                     {
-                        Console.WriteLine("У вас недостаточно средств пополните баланс");
+                        if (tm * cur.Costs > current.Balance)
+                        {
+                            Console.WriteLine("У вас недостаточно средств пополните баланс");
+                        }
+                        if (tm >= ChargeTm)
+                        {
+                            Console.WriteLine("Данное время поездки не доступно, введите актуальное " +
+                                              "или возбмите другой самокат");
+                        }
+                        Console.WriteLine("Нажмите чтобы продолжить");
+                        Console.ReadKey();
+                        Menu();
                     }
-                    if (tm >= ChargeTm)
+                    else
                     {
-                        Console.WriteLine("Данное время поездки не доступно, введите актуальное " +
-                                          "или возбмите другой самокат");
+                        current.Time += t;
+                        current.Distance += (double)(t / 60) * (cur.Speed - 5) * 1000;
+                        cur.Charge -= (int)((double)(t / 60) * (cur.Speed - 5) * 1000);
+                        Scooters[cur.Index] = cur;
+
+                        Console.WriteLine("Цена вашей поездки составить " + tm * cur.Costs);
+                        current.Balance = current.Balance - tm * cur.Costs;
+                        Console.WriteLine("Хорошей поездки!");
+                    
                     }
-                    Console.WriteLine("Нажмите чтобы продолжить");
-                    Console.ReadKey();
-                    Menu();
                 }
                 else
                 {
-                    current.Time += t;
-                    current.Distance += (double)(t / 60) * (cur.Speed - 5) * 1000;
-                    cur.Charge -= (int)((double)(t / 60) * (cur.Speed - 5) * 1000);
-                    Scooters[cur.Index] = cur;
-
-                    Console.WriteLine("Цена вашей поездки составить " + tm * cur.Costs);
-                    current.Balance = current.Balance - tm * cur.Costs;
-                    Console.WriteLine("Хорошей поездки!");
-                    Console.WriteLine("Нажмите чтобы продолжить");
-                    Console.ReadKey();
+                    Console.WriteLine($"Время аренды должно быть в формате числа");
                 }
+                
             }
             else 
             {
                 Console.WriteLine("Такой самокат отсутствует");
             }
+            
+            Console.WriteLine("Нажмите чтобы продолжить");
+            Console.ReadKey();
             Menu();
         }
         
-        static void Book()
-        {
-            Console.Clear();
-            Console.WriteLine("Через сколько минут вам нужен самокат:");
-            int TimeToStart = Convert.ToInt32(Console.ReadLine());
-            
-            Menu();
-        }
         static void Profile()
         {
             Console.Clear();
@@ -197,8 +193,17 @@ namespace samokat
             Console.Clear();
             Console.WriteLine("Ваш баланс:" + current.Balance);
             Console.WriteLine("Какую сумму хотите ввести?");
-            current.Balance +=Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Баланс успешно пополнен, теперь ваш баланс составляет: " + current.Balance);
+            if (Double.TryParse(Console.ReadLine(), out double sum))
+            {
+                current.Balance += sum;
+                Console.WriteLine("Баланс успешно пополнен, теперь ваш баланс составляет: " + current.Balance);
+            }
+            else
+            {
+                Console.WriteLine("неверно введена сумма, ваш баланс составляет: " + current.Balance);
+            }
+
+            
             Console.WriteLine("Нажмите чтобы продолжить");
 
             Console.ReadKey();

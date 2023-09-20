@@ -1,32 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Secret\\source\\repos\\SamokatGit\\samokat\\samokat.csproj": {}
+    "/Users/persesma/RiderProjects/samokat/samokat/samokat.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Secret\\source\\repos\\SamokatGit\\samokat\\samokat.csproj": {
+    "/Users/persesma/RiderProjects/samokat/samokat/samokat.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Secret\\source\\repos\\SamokatGit\\samokat\\samokat.csproj",
+        "projectUniqueName": "/Users/persesma/RiderProjects/samokat/samokat/samokat.csproj",
         "projectName": "samokat",
-        "projectPath": "C:\\Users\\Secret\\source\\repos\\SamokatGit\\samokat\\samokat.csproj",
-        "packagesPath": "C:\\Users\\Secret\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Secret\\source\\repos\\SamokatGit\\samokat\\obj\\",
+        "projectPath": "/Users/persesma/RiderProjects/samokat/samokat/samokat.csproj",
+        "packagesPath": "/Users/persesma/.nuget/packages/",
+        "outputPath": "/Users/persesma/RiderProjects/samokat/samokat/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Secret\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/persesma/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -60,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }
