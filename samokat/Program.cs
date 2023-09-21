@@ -140,7 +140,6 @@ namespace samokat
                 {
                     Console.WriteLine($"Время аренды должно быть в формате числа");
                 }
-                
             }
             else 
             {
@@ -184,6 +183,7 @@ namespace samokat
             {
                 current.PromotionalCode = temp;
                 Print_Promo();
+                current.Balance += 50;
                 Console.WriteLine("Нажмите чтобы выйти");
             }else
             {
