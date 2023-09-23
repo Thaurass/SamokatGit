@@ -7,9 +7,20 @@ namespace samokat
 {
     internal abstract class Program
     {
+        private static string arg0 = "";
+
         static void Main(string[] args)
         {
-            StartScreen();
+            if (args.Length == 0)
+            {
+                Console.WriteLine("Аргумент не передан");
+            }
+            else
+            {
+                arg0 = args[0];
+                StartScreen();
+            }
+            
         }
 
         protected internal static void Menu()
@@ -59,7 +70,7 @@ namespace samokat
 
         static void Save()
         {
-            StreamWriter f = new StreamWriter("SAMOKAT.txt", false);
+            StreamWriter f = new StreamWriter(arg0, false);
             int i = 0;
             while (i < 10)
             {
@@ -79,7 +90,7 @@ namespace samokat
         {
             Console.Clear();
             Console.WriteLine("Для вас есть следующие типы самокатов");
-            StreamReader f = new StreamReader("SAMOKAT.txt");
+            StreamReader f = new StreamReader(arg0);
             int j = 0;
             while (!f.EndOfStream)
             {
