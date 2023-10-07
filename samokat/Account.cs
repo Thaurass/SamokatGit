@@ -2,11 +2,11 @@ using static samokat.Program;
 
 namespace samokat;
 
-public class Account
+internal class Account
 {
-    public struct User
+    internal struct User
     {
-        public User(string name, string password, int age)
+        internal User(string name, string password, int age)
         {
             Name = name;
             Password = password;
@@ -18,14 +18,14 @@ public class Account
             PromotionalCode = "";
         }
 
-        public string Name { get; }
-        public string Password { get; }
-        public int Age { get; }
-        public double Balance { get; set; }
-        public double Distance { get; set; }
-        public double Time { get; set; }
-        public int NumTrips { get; set; }
-        public string PromotionalCode { get; set; }
+        internal string Name { get; }
+        internal string Password { get; }
+        internal int Age { get; }
+        internal double Balance { get; set; }
+        internal double Distance { get; set; }
+        internal double Time { get; set; }
+        internal int NumTrips { get; set; }
+        internal string PromotionalCode { get; set; }
 
 
 
@@ -37,9 +37,9 @@ public class Account
 
     }
 
-    public static User current = new();
+    internal static User current = new();
 
-    public static string promo = "FREE";
+    internal static string promo = "FREE";
 
 
     private static readonly List<User> Users = new();
@@ -77,7 +77,7 @@ public class Account
         }
     }
 
-    private static void Login()
+    static void Login()
     {
         bool log = false;
         while (!log)
@@ -114,7 +114,7 @@ public class Account
 
     }
 
-    private static void Register()
+    static void Register()
     {
         
         Console.WriteLine("Придумайте логин:");

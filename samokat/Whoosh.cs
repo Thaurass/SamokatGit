@@ -2,9 +2,9 @@
 
 namespace samokat
 {
-    public class Whoosh
+    internal class Whoosh
     {
-        public struct Transport
+        internal struct Transport
         {
             public Transport(int number, int type, int index, double charge)
             {
@@ -27,19 +27,19 @@ namespace samokat
                 }
             }
 
-            public string Number { get; }
-            public double Charge { get; set; }
+            internal string Number { get; }
+            internal double Charge { get; set; }
             private int Type { get; }
-            public int Costs { get; }
-            public double Speed { get; }
-            public int Index { get; }
+            internal int Costs { get; }
+            internal double Speed { get; }
+            internal int Index { get; }
 
 
         }
 
-        public static Transport cur = new();
+        internal static Transport CurrentSamokat = new();
 
-        public static List<Transport> Scooters = new();
+        internal static List<Transport> Scooters = new();
 
         internal static void GenerateTransport()
         {

@@ -21,7 +21,7 @@ namespace samokat
             
         }
 
-        protected internal static void Menu()
+        internal static void Menu()
         {
             StartMenuMsg();
 
@@ -40,7 +40,7 @@ namespace samokat
                         stop = true;
                         break;
                     case "3":
-                        deposit();
+                        Deposit();
                         stop = true;
                         break;
                     case "4":
@@ -83,18 +83,18 @@ namespace samokat
 
             if (Scooters.Contains(Scooters.Find(Transport => Transport.Number == Number)))
             {
-                cur = Scooters.Find(Transport => Transport.Number == Number);
+                CurrentSamokat = Scooters.Find(Transport => Transport.Number == Number);
                 Console.WriteLine("Введите время аренды самоката:");
-                int ChargeTm = Convert.ToInt32((cur.Charge / (cur.Speed - 5) / 1000) * 60);
+                int ChargeTm = Convert.ToInt32((CurrentSamokat.Charge / (CurrentSamokat.Speed - 5) / 1000) * 60);
                 Console.WriteLine("Доступное время до " + ChargeTm + " минут");
 
                 if (Int32.TryParse(Console.ReadLine(), out int tm))
                 {
                     double t = tm;
 
-                    if (tm * cur.Costs > current.Balance || tm >= ChargeTm)
+                    if (tm * CurrentSamokat.Costs > current.Balance || tm >= ChargeTm)
                     {
-                        if (tm * cur.Costs > current.Balance)
+                        if (tm * CurrentSamokat.Costs > current.Balance)
                         {
                             Console.WriteLine("У вас недостаточно средств пополните баланс");
                         }
@@ -110,12 +110,12 @@ namespace samokat
                     else
                     {
                         current.Time += t;
-                        current.Distance += (double)(t / 60) * (cur.Speed - 5) * 1000;
-                        cur.Charge -= (int)((double)(t / 60) * (cur.Speed - 5) * 1000);
-                        Scooters[cur.Index] = cur;
+                        current.Distance += (double)(t / 60) * (CurrentSamokat.Speed - 5) * 1000;
+                        CurrentSamokat.Charge -= (int)((double)(t / 60) * (CurrentSamokat.Speed - 5) * 1000);
+                        Scooters[CurrentSamokat.Index] = CurrentSamokat;
 
-                        Console.WriteLine("Цена вашей поездки составить " + tm * cur.Costs);
-                        current.Balance = current.Balance - tm * cur.Costs;
+                        Console.WriteLine("Цена вашей поездки составить " + tm * CurrentSamokat.Costs);
+                        current.Balance = current.Balance - tm * CurrentSamokat.Costs;
                         Console.WriteLine("Хорошей поездки!");
                     
                     }
@@ -182,7 +182,7 @@ namespace samokat
             Menu();
         }
         
-        static void deposit()
+        static void Deposit()
         {
             Console.Clear();
             Console.WriteLine("Ваш баланс:" + current.Balance);
