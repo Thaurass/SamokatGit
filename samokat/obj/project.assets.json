@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/persesma/Projects/SamokatGit/samokat/samokat.csproj",
+      "projectUniqueName": "/Users/persesma/Documents/GitHub/SamokatGit/samokat/samokat.csproj",
       "projectName": "samokat",
-      "projectPath": "/Users/persesma/Projects/SamokatGit/samokat/samokat.csproj",
+      "projectPath": "/Users/persesma/Documents/GitHub/SamokatGit/samokat/samokat.csproj",
       "packagesPath": "/Users/persesma/.nuget/packages/",
-      "outputPath": "/Users/persesma/Projects/SamokatGit/samokat/obj/",
+      "outputPath": "/Users/persesma/Documents/GitHub/SamokatGit/samokat/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/persesma/.nuget/NuGet/NuGet.Config"
