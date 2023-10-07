@@ -1,13 +1,11 @@
-﻿using System.Text.Encodings.Web;
-using System.Xml.Linq;
-using static samokat.Account;
+﻿using static samokat.Account;
 using static samokat.Whoosh;
 
 namespace samokat
 {
     internal abstract class Program
     {
-        private static string arg0 = "";
+        internal static string arg0 = "";
 
         static void Main(string[] args)
         {
@@ -25,13 +23,7 @@ namespace samokat
 
         protected internal static void Menu()
         {
-            Console.Clear();
-            Console.WriteLine("Главное меню:");
-            Console.WriteLine("1. Арендовать самокат");
-            Console.WriteLine("2. Профиль");
-            Console.WriteLine("3. Пополнить баланс");
-            Console.WriteLine("4. Ввести промокод");
-            Console.WriteLine("5. Выйти");
+            StartMenuMsg();
 
             bool stop = false;
             while (!stop)
@@ -68,57 +60,38 @@ namespace samokat
 
         }
 
-        static void Save()
+
+        static void StartMenuMsg()
         {
-            StreamWriter f = new StreamWriter(arg0, false);
-            int i = 0;
-            while (i < 10)
-            {
-                string s0 = Scooters[i].Number.Remove(1);
-                string s1 = Scooters[i].Number;
-                if (s1[1] == 'A')
-                    s1 = "1";
-                else
-                    s1 = "2";
-                string s2 = ((double)(Scooters[i].Charge / 1000)).ToString();
-                f.WriteLine(s0 + " " + s1 + " " + s2);
-                i++;
-            }
-            f.Close();
+            Console.Clear();
+            Console.WriteLine("Главное меню:");
+            Console.WriteLine("1. Арендовать самокат");
+            Console.WriteLine("2. Профиль");
+            Console.WriteLine("3. Пополнить баланс");
+            Console.WriteLine("4. Ввести промокод");
+            Console.WriteLine("5. Выйти");
         }
+
+        
+
         static void Rent()
         {
             Console.Clear();
-            Console.WriteLine("Для вас есть следующие типы самокатов");
-            StreamReader f = new StreamReader(arg0);
-            int j = 0;
-            while (!f.EndOfStream)
-            {
-                string s = f.ReadLine();
-                Scooters.Add(new Transport(Convert.ToInt32(s.Remove(1)), 
-                                           Convert.ToInt32(s.Substring(2, 2)), j, 
-                                           Convert.ToDouble(s.Substring(3)) * 1000));
-                j++;
-            }
-            f.Close();
-            for (int i = 0; i < 10; i++)
-            {
-                if ((double)(Scooters[i].Charge / 1000) > 0)
-                {
-                    Console.WriteLine(" Номер " + Scooters[i].Number + " Заряд в км {0:F2}", (double)(Scooters[i].Charge / 1000));
-                }
-            }
+            Load();
             Console.WriteLine("Введите номер желаймого самоката:");
             string Number = Console.ReadLine().ToUpper();
+
             if (Scooters.Contains(Scooters.Find(Transport => Transport.Number == Number)))
             {
                 cur = Scooters.Find(Transport => Transport.Number == Number);
                 Console.WriteLine("Введите время аренды самоката:");
                 int ChargeTm = Convert.ToInt32((cur.Charge / (cur.Speed - 5) / 1000) * 60);
                 Console.WriteLine("Доступное время до " + ChargeTm + " минут");
+
                 if (Int32.TryParse(Console.ReadLine(), out int tm))
                 {
                     double t = tm;
+
                     if (tm * cur.Costs > current.Balance || tm >= ChargeTm)
                     {
                         if (tm * cur.Costs > current.Balance)
@@ -170,6 +143,7 @@ namespace samokat
             Console.WriteLine("Ваш возраст: " + current.Age);
             Console.WriteLine("Ваш баланс: " + current.Balance);
             Console.WriteLine("Ваш пароль: " + current.Password);
+
             if (current.PromotionalCode != "")
             {
                 Console.Write("Ваш промокод ");
@@ -178,6 +152,7 @@ namespace samokat
                 Console.ResetColor();
 
             }
+
             Print_Stat();
             Console.WriteLine("Вы проехали: {0:F2} км", current.Distance/1000);
             Console.WriteLine("Время в пути вместе: {0:#} минут", current.Time);
@@ -191,15 +166,18 @@ namespace samokat
         {
             Console.WriteLine("Введите промокод:");
             string temp = Console.ReadLine();
+
             if (temp.Contains(promo) || temp.ToUpper().Contains(promo))
             {
                 current.PromotionalCode = temp;
                 Print_Promo();
                 Console.WriteLine("Нажмите чтобы выйти");
-            }else
+            }
+            else
             {
                 Console.WriteLine("Неверный промокод");
             }
+
             Console.ReadKey();
             Menu();
         }
@@ -209,6 +187,7 @@ namespace samokat
             Console.Clear();
             Console.WriteLine("Ваш баланс:" + current.Balance);
             Console.WriteLine("Какую сумму хотите ввести?");
+
             if (Double.TryParse(Console.ReadLine(), out double sum))
             {
                 current.Balance += sum;
@@ -225,6 +204,7 @@ namespace samokat
             Console.ReadKey();
             Menu();
         }
+
         static void Print_Stat()
         {
             Console.WriteLine("#######################################\r\n" +
@@ -239,6 +219,7 @@ namespace samokat
                               "#                                     #\r\n" +
                               "#######################################");
         }
+
         static void Print_Promo()
         {
             Console.ForegroundColor = ConsoleColor.Green;

@@ -1,21 +1,22 @@
-﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{D5B87C1E-9728-4A8C-968A-4373A725A121}|Default">
-  <MonoDevelop.Ide.ItemProperties.samokat PreferredExecutionTarget="MonoDevelop.Default" />
-  <MultiItemStartupConfigurations />
+﻿<Properties StartupConfiguration="{D5B87C1E-9728-4A8C-968A-4373A725A121}|Default" GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="samokat/Program.cs">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.samokat PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="samokat/Account.cs">
     <Files>
       <File FileName="samokat/Whoosh.cs" Line="1" Column="1" />
-      <File FileName="samokat/Program.cs" Line="17" Column="14" />
+      <File FileName="samokat/Program.cs" Line="7" Column="2" />
       <File FileName="samokat/Account.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="samokat" expanded="True">
-            <Node name="samokat" expanded="True">
-              <Node name="Whoosh.cs" selected="True" />
+          <Node name="samokat">
+            <Node name="samokat">
+              <Node name="Account.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -23,5 +24,4 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
