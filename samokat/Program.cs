@@ -92,9 +92,9 @@ namespace samokat
                 {
                     double t = tm;
 
-                    if (tm * CurrentSamokat.Costs > current.Balance || tm >= ChargeTm)
+                    if (tm * CurrentSamokat.Costs > CurrentUser.Balance || tm >= ChargeTm)
                     {
-                        if (tm * CurrentSamokat.Costs > current.Balance)
+                        if (tm * CurrentSamokat.Costs > CurrentUser.Balance)
                         {
                             Console.WriteLine("У вас недостаточно средств пополните баланс");
                         }
@@ -109,13 +109,13 @@ namespace samokat
                     }
                     else
                     {
-                        current.Time += t;
-                        current.Distance += (double)(t / 60) * (CurrentSamokat.Speed - 5) * 1000;
+                        CurrentUser.Time += t;
+                        CurrentUser.Distance += (double)(t / 60) * (CurrentSamokat.Speed - 5) * 1000;
                         CurrentSamokat.Charge -= (int)((double)(t / 60) * (CurrentSamokat.Speed - 5) * 1000);
                         Scooters[CurrentSamokat.Index] = CurrentSamokat;
 
                         Console.WriteLine("Цена вашей поездки составить " + tm * CurrentSamokat.Costs);
-                        current.Balance = current.Balance - tm * CurrentSamokat.Costs;
+                        CurrentUser.Balance = CurrentUser.Balance - tm * CurrentSamokat.Costs;
                         Console.WriteLine("Хорошей поездки!");
                     
                     }
@@ -139,12 +139,12 @@ namespace samokat
         static void Profile()
         {
             Console.Clear();
-            Console.WriteLine("Здравствуйте: " + current.Name);
-            Console.WriteLine("Ваш возраст: " + current.Age);
-            Console.WriteLine("Ваш баланс: " + current.Balance);
-            Console.WriteLine("Ваш пароль: " + current.Password);
+            Console.WriteLine("Здравствуйте: " + CurrentUser.Name);
+            Console.WriteLine("Ваш возраст: " + CurrentUser.Age);
+            Console.WriteLine("Ваш баланс: " + CurrentUser.Balance);
+            Console.WriteLine("Ваш пароль: " + CurrentUser.Password);
 
-            if (current.PromotionalCode != "")
+            if (CurrentUser.PromotionalCode != "")
             {
                 Console.Write("Ваш промокод ");
                 Console.ForegroundColor = ConsoleColor.Green;
@@ -154,8 +154,8 @@ namespace samokat
             }
 
             Print_Stat();
-            Console.WriteLine("Вы проехали: {0:F2} км", current.Distance/1000);
-            Console.WriteLine("Время в пути вместе: {0:#} минут", current.Time);
+            Console.WriteLine("Вы проехали: {0:F2} км", CurrentUser.Distance/1000);
+            Console.WriteLine("Время в пути вместе: {0:#} минут", CurrentUser.Time);
             
             Console.WriteLine("Нажмите чтобы выйти");
             Console.ReadKey();
@@ -169,7 +169,7 @@ namespace samokat
 
             if (temp.Contains(promo) || temp.ToUpper().Contains(promo))
             {
-                current.PromotionalCode = temp;
+                CurrentUser.PromotionalCode = temp;
                 Print_Promo();
                 Console.WriteLine("Нажмите чтобы выйти");
             }
@@ -185,17 +185,17 @@ namespace samokat
         static void Deposit()
         {
             Console.Clear();
-            Console.WriteLine("Ваш баланс:" + current.Balance);
+            Console.WriteLine("Ваш баланс:" + CurrentUser.Balance);
             Console.WriteLine("Какую сумму хотите ввести?");
 
             if (Double.TryParse(Console.ReadLine(), out double sum))
             {
-                current.Balance += sum;
-                Console.WriteLine("Баланс успешно пополнен, теперь ваш баланс составляет: " + current.Balance);
+                CurrentUser.Balance += sum;
+                Console.WriteLine("Баланс успешно пополнен, теперь ваш баланс составляет: " + CurrentUser.Balance);
             }
             else
             {
-                Console.WriteLine("неверно введена сумма, ваш баланс составляет: " + current.Balance);
+                Console.WriteLine("неверно введена сумма, ваш баланс составляет: " + CurrentUser.Balance);
             }
 
             

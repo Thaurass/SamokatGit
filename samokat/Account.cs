@@ -37,7 +37,7 @@ internal class Account
 
     }
 
-    internal static User current = new();
+    internal static User CurrentUser = new();
 
     internal static string promo = "FREE";
 
@@ -91,7 +91,7 @@ internal class Account
 
             if (Users.Contains(Users.Find(user => user.Name == login && user.Password == password)))
             {
-                current = Users.Find(user => user.Name == login && user.Password == password);
+                CurrentUser = Users.Find(user => user.Name == login && user.Password == password);
                 Console.WriteLine("Вы успешно вошли в аккаунт");
                 log = true;
                 Menu();
