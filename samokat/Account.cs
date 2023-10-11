@@ -1,4 +1,5 @@
-using static samokat.Program;
+using static samokat.ProgramStartScreen;
+using static samokat.ProgramMenu;
 
 namespace samokat;
 
@@ -27,57 +28,22 @@ internal class Account
         internal int NumTrips { get; set; }
         internal string PromotionalCode { get; set; }
 
-
-
-
-        // private override string Register()
-        // {
-        //     return $"({_name}, {_password}, {_age}, {_balance})";
-        // }
-
     }
 
     internal static User CurrentUser = new();
 
-    internal static string promo = "FREE";
+    internal static readonly List<User> Users = new();
 
-
-    private static readonly List<User> Users = new();
-    
-    protected internal static void StartScreen()
+    internal static void StartScreenMsg()
     {
         Console.Clear();
         Console.WriteLine("Добро пожаловать в сервис самокат");
         Console.WriteLine("1. Войти");
         Console.WriteLine("2. Зарегистрироваться");
         Console.WriteLine("3. Выйти из приложения");
-            
-        bool stop = false;
-        while (!stop)
-        {
-            string? answer = Console.ReadLine();
-            switch (answer)
-            {
-                case "1":
-                    Login();
-                    stop = true;
-                    break;
-                case "2":
-                    Register();
-                    stop = true;
-                    break;
-                case "3":
-                    Environment.Exit(0);
-                    stop = true;
-                    break;
-                default:
-                    Console.WriteLine("Неверный ввод");
-                    break;
-            }
-        }
     }
 
-    static void Login()
+    internal static void Login()
     {
         bool log = false;
         while (!log)
@@ -105,7 +71,7 @@ internal class Account
                 {
                     StartScreen();
                 }
-                
+
             }
         }
 
@@ -114,9 +80,9 @@ internal class Account
 
     }
 
-    static void Register()
+    internal static void Register()
     {
-        
+
         Console.WriteLine("Придумайте логин:");
         string login = Console.ReadLine();
         Console.WriteLine("Придумайте пароль:");
@@ -125,18 +91,34 @@ internal class Account
         if (Int32.TryParse(Console.ReadLine(), out int age))
         {
             Users.Add(new User(login, password, age));
-        
+
             Console.WriteLine($"Регистрация прошла успешно");
         }
         else
         {
             Console.WriteLine($"Возраст должен быть введен в формате числа");
         }
-        
+
         Console.WriteLine("Нажжмите чтобы продолжить");
         Console.ReadKey();
         StartScreen();
 
 
     }
+
+    internal static void ExitProgram()
+    {
+        Environment.Exit(0);
+    }
+
+    internal static void ErrorMessage()
+    {
+        Console.WriteLine("Неверный ввод");
+    }
+
+    internal static string ReadAnswer()
+    {
+        return Console.ReadLine();
+    }
+
 }
