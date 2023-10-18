@@ -56,3 +56,5 @@ C:\Users\xj48v\Documents\Лекции\Теория программирован�
 C:\Users\xj48v\Documents\Лекции\Теория программирования\SamokatGit\samokat\obj\Debug\net7.0\samokat.pdb
 C:\Users\xj48v\Documents\Лекции\Теория программирования\SamokatGit\samokat\obj\Debug\net7.0\samokat.genruntimeconfig.cache
 C:\Users\xj48v\Documents\Лекции\Теория программирования\SamokatGit\samokat\obj\Debug\net7.0\ref\samokat.dll
+C:\Users\xj48v\Documents\Лекции\Теория программирования\SamokatGit\samokat\obj\Debug\net7.0\samokat.Properties.Resources.resources
+C:\Users\xj48v\Documents\Лекции\Теория программирования\SamokatGit\samokat\obj\Debug\net7.0\samokat.csproj.GenerateResource.cache
