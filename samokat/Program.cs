@@ -1,4 +1,5 @@
 ﻿using static samokat.ProgramStartScreen;
+using static samokat.MenuFunctions;
 
 namespace samokat
 {
@@ -10,7 +11,7 @@ namespace samokat
         {
             if (args.Length == 0)
             {
-                Console.WriteLine("Аргумент не передан");
+                Print_message("Аргумент не передан");
             }
             else
             {

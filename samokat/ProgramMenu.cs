@@ -17,7 +17,7 @@ namespace samokat
                 switch (ReadAnswer())
                 {
                     case "1":
-                        Rent();
+                        RentScooter();
                         stop = true;
                         break;
                     case "2":

@@ -1,4 +1,5 @@
 ﻿using static samokat.Program;
+using static samokat.MenuFunctions;
 
 namespace samokat
 {
@@ -41,17 +42,6 @@ namespace samokat
 
         internal static List<Transport> Scooters = new();
 
-        internal static void GenerateTransport()
-        {
-            Random rnd = new();
-            
-            for (int i = 0; i < 10; i++)
-            {
-                Scooters.Add(new Transport(i, rnd.Next(1, 3),i,20000));
-                Console.WriteLine(Scooters[i].Number);
-            }
-        }
-
         internal static void Save()
         {
             StreamWriter f = new StreamWriter(arg0, false);
@@ -73,7 +63,7 @@ namespace samokat
 
         internal static void Load()
         {
-            Console.WriteLine("Для вас есть следующие типы самокатов");
+            Print_message("Для вас есть следующие типы самокатов");
             StreamReader f = new StreamReader(arg0);
             int j = 0;
             while (!f.EndOfStream)
@@ -89,9 +79,22 @@ namespace samokat
             {
                 if ((double)(Scooters[i].Charge / 1000) > 0)
                 {
-                    Console.WriteLine(" Номер " + Scooters[i].Number + " Заряд в км {0:F2}", (double)(Scooters[i].Charge / 1000));
+                    Print_message(" Номер " + Scooters[i].Number + " Заряд в км {0:F2}", (double)(Scooters[i].Charge / 1000));
                 }
             }
         }
+
+        internal static int GetTime()
+        {
+            return Convert.ToInt32((CurrentSamokat.Charge / (CurrentSamokat.Speed - 5) / 1000) * 60);
+        }
+        internal static bool ReadScooter(string s)
+        {
+            string Number = s.ToUpper();
+            Transport TempScooter = Scooters.Find(Transport => Transport.Number == Number);
+            CurrentSamokat = TempScooter;
+            return Scooters.Contains(TempScooter);
+        }
+        
     }
 }

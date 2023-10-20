@@ -1,5 +1,6 @@
 using static samokat.ProgramStartScreen;
 using static samokat.ProgramMenu;
+using static samokat.MenuFunctions;
 
 namespace samokat;
 
@@ -32,15 +33,17 @@ internal class Account
 
     internal static User CurrentUser = new();
 
+    internal static string promo = "FREE";
+
     internal static readonly List<User> Users = new();
 
     internal static void StartScreenMsg()
     {
         Console.Clear();
-        Console.WriteLine("Добро пожаловать в сервис самокат");
-        Console.WriteLine("1. Войти");
-        Console.WriteLine("2. Зарегистрироваться");
-        Console.WriteLine("3. Выйти из приложения");
+        Print_message("Добро пожаловать в сервис самокат");
+        Print_message("1. Войти");
+        Print_message("2. Зарегистрироваться");
+        Print_message("3. Выйти из приложения");
     }
 
     internal static void Login()
@@ -49,57 +52,46 @@ internal class Account
         while (!log)
         {
             Console.Clear();
-            Console.WriteLine("Введите логин:");
+            Print_message("Введите логин:");
             string login = Console.ReadLine();
-            Console.WriteLine("Введите пароль:");
+            Print_message("Введите пароль:");
             string password = Console.ReadLine();
 
+            User TempUser = Users.Find(user => user.Name == login && user.Password == password);
 
-            if (Users.Contains(Users.Find(user => user.Name == login && user.Password == password)))
+            if (Users.Contains(TempUser))
             {
-                CurrentUser = Users.Find(user => user.Name == login && user.Password == password);
-                Console.WriteLine("Вы успешно вошли в аккаунт");
+                CurrentUser = TempUser;
+                Print_message("Вы успешно вошли в аккаунт");
                 log = true;
                 Menu();
             }
             else
             {
-                Console.WriteLine("Неверный логин или пороль, если вы его забыли нажмите : 1 для выхода");
-                Console.WriteLine("Или любую другую клавишу, чтобы продолжить");
-
-                if ("1" == Console.ReadLine())
-                {
-                    StartScreen();
-                }
+                Print_message("Неверный логин или пороль, если вы его забыли нажмите : 1 для выхода");
+                Print_message("Или любую другую клавишу, чтобы продолжить");
+                if ("1" == Console.ReadLine()) { StartScreen(); }
 
             }
         }
-
-
-        //Users.Find(user => user.Name.Contains(login)).Name;
-
     }
 
     internal static void Register()
     {
 
-        Console.WriteLine("Придумайте логин:");
+        Print_message("Придумайте логин:");
         string login = Console.ReadLine();
-        Console.WriteLine("Придумайте пароль:");
+        Print_message("Придумайте пароль:");
         string password = Console.ReadLine();
-        Console.WriteLine("Введите свой возраст");
+        Print_message("Введите свой возраст");
         if (Int32.TryParse(Console.ReadLine(), out int age))
         {
             Users.Add(new User(login, password, age));
-
-            Console.WriteLine($"Регистрация прошла успешно");
+            Print_message($"Регистрация прошла успешно");
         }
-        else
-        {
-            Console.WriteLine($"Возраст должен быть введен в формате числа");
-        }
+        else { Print_message($"Возраст должен быть введен в формате числа"); }
 
-        Console.WriteLine("Нажжмите чтобы продолжить");
+        Print_message("Нажжмите чтобы продолжить");
         Console.ReadKey();
         StartScreen();
 
@@ -113,12 +105,56 @@ internal class Account
 
     internal static void ErrorMessage()
     {
-        Console.WriteLine("Неверный ввод");
+        Print_message("Неверный ввод");
     }
 
     internal static string ReadAnswer()
     {
         return Console.ReadLine();
     }
+
+    internal static void ChangeBallance()
+    {
+        Print_message("Неверный ввод");
+    }
+
+    internal static void CheckPromo()
+    {
+        if (CurrentUser.PromotionalCode != "")
+        {
+            Print_message("Ваш промокод ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Print_message("активирован");
+            Console.ResetColor();
+
+        }
+    }
+    internal static void CheckReadPromo(string temp)
+    {
+        if (temp.Contains(promo) || temp.ToUpper().Contains(promo))
+        {
+            CurrentUser.PromotionalCode = temp;
+            Print_Promo();
+            Print_message("Нажмите чтобы выйти");
+        }
+        else
+        {
+            Print_message("Неверный промокод");
+        }
+    }
+    internal static void AddBalance()
+    {
+        if (Double.TryParse(Read_message(), out double sum))
+        {
+            CurrentUser.Balance += sum;
+            Print_message("Баланс успешно пополнен, теперь ваш баланс составляет: " + CurrentUser.Balance);
+        }
+        else
+        {
+            Print_message("неверно введена сумма, ваш баланс составляет: " + CurrentUser.Balance);
+        }
+    }
+
+
 
 }

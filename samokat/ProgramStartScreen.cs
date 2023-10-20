@@ -1,4 +1,5 @@
 ﻿using static samokat.Account;
+using static samokat.MenuFunctions;
 
 namespace samokat
 {

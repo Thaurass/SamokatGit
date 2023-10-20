@@ -58,3 +58,19 @@ C:\Users\xj48v\Documents\Лекции\Теория программирован�
 C:\Users\xj48v\Documents\Лекции\Теория программирования\SamokatGit\samokat\obj\Debug\net7.0\ref\samokat.dll
 C:\Users\xj48v\Documents\Лекции\Теория программирования\SamokatGit\samokat\obj\Debug\net7.0\samokat.Properties.Resources.resources
 C:\Users\xj48v\Documents\Лекции\Теория программирования\SamokatGit\samokat\obj\Debug\net7.0\samokat.csproj.GenerateResource.cache
+C:\Users\Secret\Source\Repos\SamokatGit\samokat\bin\Debug\net7.0\samokat.exe
+C:\Users\Secret\Source\Repos\SamokatGit\samokat\bin\Debug\net7.0\samokat.deps.json
+C:\Users\Secret\Source\Repos\SamokatGit\samokat\bin\Debug\net7.0\samokat.runtimeconfig.json
+C:\Users\Secret\Source\Repos\SamokatGit\samokat\bin\Debug\net7.0\samokat.dll
+C:\Users\Secret\Source\Repos\SamokatGit\samokat\bin\Debug\net7.0\samokat.pdb
+C:\Users\Secret\Source\Repos\SamokatGit\samokat\obj\Debug\net7.0\samokat.Properties.Resources.resources
+C:\Users\Secret\Source\Repos\SamokatGit\samokat\obj\Debug\net7.0\samokat.csproj.GenerateResource.cache
+C:\Users\Secret\Source\Repos\SamokatGit\samokat\obj\Debug\net7.0\samokat.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Secret\Source\Repos\SamokatGit\samokat\obj\Debug\net7.0\samokat.AssemblyInfoInputs.cache
+C:\Users\Secret\Source\Repos\SamokatGit\samokat\obj\Debug\net7.0\samokat.AssemblyInfo.cs
+C:\Users\Secret\Source\Repos\SamokatGit\samokat\obj\Debug\net7.0\samokat.csproj.CoreCompileInputs.cache
+C:\Users\Secret\Source\Repos\SamokatGit\samokat\obj\Debug\net7.0\samokat.dll
+C:\Users\Secret\Source\Repos\SamokatGit\samokat\obj\Debug\net7.0\refint\samokat.dll
+C:\Users\Secret\Source\Repos\SamokatGit\samokat\obj\Debug\net7.0\samokat.pdb
+C:\Users\Secret\Source\Repos\SamokatGit\samokat\obj\Debug\net7.0\samokat.genruntimeconfig.cache
+C:\Users\Secret\Source\Repos\SamokatGit\samokat\obj\Debug\net7.0\ref\samokat.dll
