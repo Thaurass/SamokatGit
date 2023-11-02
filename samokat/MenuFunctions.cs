@@ -3,7 +3,6 @@ using static samokat.Whoosh;
 using static samokat.ProgramMenu;
 using static samokat.Rent;
 
-
 namespace samokat
 {
 	public class MenuFunctions

@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static samokat.Whoosh;
-using static samokat.ProgramStartScreen;
-using static samokat.ProgramMenu;
+﻿using static samokat.Whoosh;
 using static samokat.MenuFunctions;
 using static samokat.Account;
-using System.Runtime.InteropServices;
-
 
 namespace samokat
 {
