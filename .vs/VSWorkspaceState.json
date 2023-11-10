@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\samokat"
   ],
-  "SelectedNode": "\\samokat.sln",
+  "SelectedNode": "\\samokat\\Whoosh.cs",
   "PreviewInSolutionExplorer": false
 }

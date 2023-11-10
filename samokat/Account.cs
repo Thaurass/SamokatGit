@@ -6,30 +6,6 @@ namespace samokat;
 
 internal class Account
 {
-    internal struct User
-    {
-        internal User(string name, string password, int age)
-        {
-            Name = name;
-            Password = password;
-            Age = age;
-            Balance = 100000;
-            Distance = 0;
-            Time = 0;
-            NumTrips = 0;
-            PromotionalCode = "";
-        }
-
-        internal string Name { get; }
-        internal string Password { get; }
-        internal int Age { get; }
-        internal double Balance { get; set; }
-        internal double Distance { get; set; }
-        internal double Time { get; set; }
-        internal int NumTrips { get; set; }
-        internal string PromotionalCode { get; set; }
-
-    }
 
     internal static User CurrentUser = new();
 
@@ -129,11 +105,12 @@ internal class Account
 
         }
     }
+
     internal static void CheckReadPromo(string temp)
     {
         if (temp.Contains(promo) || temp.ToUpper().Contains(promo))
         {
-            CurrentUser.PromotionalCode = temp;
+            CurrentUser.SetPromotionalCode(temp);
             Print_Promo();
             Print_message("Нажмите чтобы выйти");
         }
@@ -142,11 +119,12 @@ internal class Account
             Print_message("Неверный промокод");
         }
     }
+
     internal static void AddBalance()
     {
         if (Double.TryParse(Read_message(), out double sum))
         {
-            CurrentUser.Balance += sum;
+            CurrentUser.SetBalance(CurrentUser.Balance + sum);
             Print_message("Баланс успешно пополнен, теперь ваш баланс составляет: " + CurrentUser.Balance);
         }
         else
@@ -154,7 +132,4 @@ internal class Account
             Print_message("неверно введена сумма, ваш баланс составляет: " + CurrentUser.Balance);
         }
     }
-
-
-
 }

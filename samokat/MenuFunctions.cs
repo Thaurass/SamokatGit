@@ -2,6 +2,7 @@
 using static samokat.Whoosh;
 using static samokat.ProgramMenu;
 using static samokat.Rent;
+using static samokat.FileProcessing;
 
 namespace samokat
 {

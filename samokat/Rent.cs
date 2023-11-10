@@ -37,6 +37,7 @@ namespace samokat
                 CheckMaxTime();
             }
         }
+
         internal static void CheckMaxTime()
         {
             if (t > GetTime())
@@ -51,14 +52,16 @@ namespace samokat
                 SetData();
             }
         }
+
         internal static void SetData()
         {
-            CurrentUser.Time += t;
-            CurrentUser.Distance += (double)(t / 60) * (CurrentSamokat.Speed - 5) * 1000;
-            CurrentSamokat.Charge -= (int)((double)(t / 60) * (CurrentSamokat.Speed - 5) * 1000);
-            Scooters[CurrentSamokat.Index] = CurrentSamokat;
-            CurrentUser.Balance = CurrentUser.Balance - t * CurrentSamokat.Costs;
+            CurrentUser.SetTime(CurrentUser.Time + t);
+            CurrentUser.SetDistance(CurrentUser.Distance + (double)(t / 60) * (CurrentSamokat.Speed - 5) * 1000);
+            CurrentSamokat.SetCharge((int)(CurrentSamokat.Charge - (int)((double)(t / 60) * (CurrentSamokat.Speed - 5) * 1000)));
+            Transport[CurrentSamokat.Index] = CurrentSamokat;
+            CurrentUser.SetBalance(CurrentUser.Balance - t * CurrentSamokat.Costs);
         }
+
         internal static double GetCurrentCost()
         {
             return t * CurrentSamokat.Costs;
