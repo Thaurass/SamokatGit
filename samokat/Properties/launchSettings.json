@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "samokat": {
+      "commandName": "Project",
+      "commandLineArgs": "SAMOKAT.txt"
+    }
+  }
+}

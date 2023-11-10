@@ -1,52 +1,25 @@
 ﻿namespace samokat
 {
-    public class Whoosh
+    internal class Whoosh
     {
-        public struct Transport
+        internal static Scooter CurrentSamokat = new();
+
+        internal static List<Scooter> Transport = new();
+
+        internal static int GetTime()
         {
-            public Transport(int number, int type, int index, double charge)
-            {
-                Type = type;
-                Index = index;
-                Charge = charge;
-
-                switch (Type)
-                {
-                    case 1:
-                        Number = $"{number}A";
-                        Costs = 5;
-                        Speed = 15;
-                        break;
-                    case 2:
-                        Number = $"{number}B";
-                        Costs = 7;
-                        Speed = 25;
-                        break;
-                }
-            }
-
-            public string Number { get; }
-            public double Charge { get; set; }
-            private int Type { get; }
-            public int Costs { get; }
-            public double Speed { get; }
-            public int Index { get; }
-
-
+            return Convert.ToInt32(
+                    (CurrentSamokat.Charge / (CurrentSamokat.Speed - 5) / 1000) * 60
+                );
         }
-        public static Transport cur = new();
 
-        public static List<Transport> Scooters = new();
-
-        internal static void GenerateTransport()
+        internal static bool ReadScooter(string s)
         {
-            Random rnd = new();
-            
-            for (int i = 0; i < 10; i++)
-            {
-                Scooters.Add(new Transport(i, rnd.Next(1, 3),i,20000));
-                Console.WriteLine(Scooters[i].Number);
-            }
+            string Number = s.ToUpper();
+            Scooter TempScooter = Transport.Find(Scooter => Scooter.Number == Number);
+            CurrentSamokat = TempScooter;
+            return Transport.Contains(TempScooter);
         }
+        
     }
 }
