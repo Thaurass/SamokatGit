@@ -8,10 +8,9 @@ namespace samokat
 {
 	public class MenuFunctions
 	{
-
         internal static void StartMenuMsg()
         {
-            Console.Clear();
+            ClearConsole();
             Print_message("Главное меню:");
             Print_message("1. Арендовать самокат");
             Print_message("2. Профиль");
@@ -22,7 +21,7 @@ namespace samokat
 
         internal static void RentScooter()
         {
-            Console.Clear();
+            ClearConsole();
             Load();
             Print_message("Введите номер желаймого самоката:");
  
@@ -47,7 +46,7 @@ namespace samokat
 
         internal static void Profile()
         {
-            Console.Clear();
+            ClearConsole();
             Print_message("Здравствуйте: " + CurrentUser.Name);
             Print_message("Ваш возраст: " + CurrentUser.Age);
             Print_message("Ваш баланс: " + CurrentUser.Balance);
@@ -73,7 +72,7 @@ namespace samokat
 
         internal static void Deposit()
         {
-            Console.Clear();
+            ClearConsole();
             Print_message("Ваш баланс:" + CurrentUser.Balance);
             Print_message("Какую сумму хотите ввести?");
             AddBalance();
@@ -91,7 +90,11 @@ namespace samokat
             Console.WriteLine(_yourMessage, data);
         }
 
-      
+        internal static void ClearConsole()
+        {
+            Console.Clear();
+        }
+
         internal static void Print_Stat()
         {
                 Print_message("#######################################\r\n" +
@@ -124,11 +127,13 @@ namespace samokat
               "##################################################################################################################");
             Console.ResetColor();
         }
+
         internal static void Wait()
         {
             Print_message("Нажмите чтобы продолжить");
             Console.ReadKey();
         }
+
         internal static string Read_message()
         {
             return Console.ReadLine();
