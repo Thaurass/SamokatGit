@@ -10,3 +10,15 @@ C:\Users\xj48v\OneDrive\Документы\VS\BusinessLogic\obj\Debug\net7.0\Bus
 C:\Users\xj48v\OneDrive\Документы\VS\BusinessLogic\obj\Debug\net7.0\refint\BusinessLogic.dll
 C:\Users\xj48v\OneDrive\Документы\VS\BusinessLogic\obj\Debug\net7.0\BusinessLogic.pdb
 C:\Users\xj48v\OneDrive\Документы\VS\BusinessLogic\obj\Debug\net7.0\ref\BusinessLogic.dll
+C:\Users\xj48v\OneDrive\Документы\Burn2Code\VS\SamokatGit\BusinessLogic\bin\Debug\net7.0\BusinessLogic.deps.json
+C:\Users\xj48v\OneDrive\Документы\Burn2Code\VS\SamokatGit\BusinessLogic\bin\Debug\net7.0\BusinessLogic.dll
+C:\Users\xj48v\OneDrive\Документы\Burn2Code\VS\SamokatGit\BusinessLogic\bin\Debug\net7.0\BusinessLogic.pdb
+C:\Users\xj48v\OneDrive\Документы\Burn2Code\VS\SamokatGit\BusinessLogic\obj\Debug\net7.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\xj48v\OneDrive\Документы\Burn2Code\VS\SamokatGit\BusinessLogic\obj\Debug\net7.0\BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\xj48v\OneDrive\Документы\Burn2Code\VS\SamokatGit\BusinessLogic\obj\Debug\net7.0\BusinessLogic.AssemblyInfo.cs
+C:\Users\xj48v\OneDrive\Документы\Burn2Code\VS\SamokatGit\BusinessLogic\obj\Debug\net7.0\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\xj48v\OneDrive\Документы\Burn2Code\VS\SamokatGit\BusinessLogic\obj\Debug\net7.0\BusinessLogic.sourcelink.json
+C:\Users\xj48v\OneDrive\Документы\Burn2Code\VS\SamokatGit\BusinessLogic\obj\Debug\net7.0\BusinessLogic.dll
+C:\Users\xj48v\OneDrive\Документы\Burn2Code\VS\SamokatGit\BusinessLogic\obj\Debug\net7.0\refint\BusinessLogic.dll
+C:\Users\xj48v\OneDrive\Документы\Burn2Code\VS\SamokatGit\BusinessLogic\obj\Debug\net7.0\BusinessLogic.pdb
+C:\Users\xj48v\OneDrive\Документы\Burn2Code\VS\SamokatGit\BusinessLogic\obj\Debug\net7.0\ref\BusinessLogic.dll
