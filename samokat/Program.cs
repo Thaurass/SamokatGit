@@ -1,12 +1,11 @@
-﻿using static samokat.ProgramStartScreen;
-using static samokat.MenuFunctions;
+﻿using static UserInterface.ProgramStartScreen;
+using static UserInterface.MenuFunctions;
+using static FileWorker.FileProcessing;
 
 namespace samokat
 {
-    internal abstract class Program
+    public abstract class Program
     {
-        internal static string arg0 = "";
-
         static void Main(string[] args)
         {
             if (args.Length == 0)

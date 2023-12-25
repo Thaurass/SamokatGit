@@ -1,11 +1,69 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "BusinessLogic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/BusinessLogic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BusinessLogic.dll": {}
+        }
+      },
+      "FileWorker/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "BusinessLogic": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FileWorker.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FileWorker.dll": {}
+        }
+      },
+      "UserInterface/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "BusinessLogic": "1.0.0",
+          "FileWorker": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UserInterface.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UserInterface.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "BusinessLogic/1.0.0": {
+      "type": "project",
+      "path": "../BusinessLogic/BusinessLogic.csproj",
+      "msbuildProject": "../BusinessLogic/BusinessLogic.csproj"
+    },
+    "FileWorker/1.0.0": {
+      "type": "project",
+      "path": "../FileWorker/FileWorker.csproj",
+      "msbuildProject": "../FileWorker/FileWorker.csproj"
+    },
+    "UserInterface/1.0.0": {
+      "type": "project",
+      "path": "../UserInterface/UserInterface.csproj",
+      "msbuildProject": "../UserInterface/UserInterface.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "BusinessLogic >= 1.0.0",
+      "FileWorker >= 1.0.0",
+      "UserInterface >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\xj48v\\.nuget\\packages\\": {},
@@ -39,7 +97,17 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\xj48v\\OneDrive\\Документы\\VS\\BusinessLogic\\BusinessLogic.csproj": {
+              "projectPath": "C:\\Users\\xj48v\\OneDrive\\Документы\\VS\\BusinessLogic\\BusinessLogic.csproj"
+            },
+            "C:\\Users\\xj48v\\OneDrive\\Документы\\VS\\FileWorker\\FileWorker.csproj": {
+              "projectPath": "C:\\Users\\xj48v\\OneDrive\\Документы\\VS\\FileWorker\\FileWorker.csproj"
+            },
+            "C:\\Users\\xj48v\\OneDrive\\Документы\\VS\\UserInterface\\UserInterface.csproj": {
+              "projectPath": "C:\\Users\\xj48v\\OneDrive\\Документы\\VS\\UserInterface\\UserInterface.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -67,7 +135,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
