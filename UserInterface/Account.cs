@@ -1,17 +1,12 @@
 using static UserInterface.ProgramStartScreen;
 using static UserInterface.ProgramMenu;
 using static UserInterface.MenuFunctions;
+using static BusinessLogic.AccountFunctions;
 using BusinessLogic;
 namespace UserInterface;
 
 public class Account
 {
-
-    public static User CurrentUser = new();
-
-    public static string promo = "FREE";
-
-    public static readonly List<User> Users = new();
 
     public static void StartScreenMsg()
     {
@@ -32,12 +27,9 @@ public class Account
             string login = Read_message();
             Print_message("Введите пароль:");
             string password = Read_message();
-
-            User TempUser = Users.Find(user => user.Name == login && user.Password == password);
-
-            if (Users.Contains(TempUser))
+            
+            if (CheckLoginData(login, password))
             {
-                CurrentUser = TempUser;
                 Print_message("Вы успешно вошли в аккаунт");
                 log = true;
                 Menu();
@@ -60,9 +52,10 @@ public class Account
         Print_message("Придумайте пароль:");
         string password = Read_message();
         Print_message("Введите свой возраст");
-        if (Int32.TryParse(Read_message(), out int age))
+        string age = Read_message();
+
+        if (AddNewUser(login, password, age))
         {
-            Users.Add(new User(login, password, age));
             Print_message($"Регистрация прошла успешно");
         }
         else { Print_message($"Возраст должен быть введен в формате числа"); }
@@ -70,12 +63,6 @@ public class Account
         Wait();
         StartScreen();
 
-
-    }
-
-    public static void ExitProgram()
-    {
-        Environment.Exit(0);
     }
 
     public static void ErrorMessage()
@@ -107,9 +94,8 @@ public class Account
 
     public static void CheckReadPromo(string temp)
     {
-        if (temp.Contains(promo) || temp.ToUpper().Contains(promo))
+        if (SetUserPromotionalCode(temp))
         {
-            CurrentUser.SetPromotionalCode(temp);
             Print_Promo();
             Print_message("Нажмите чтобы выйти");
         }
@@ -121,9 +107,9 @@ public class Account
 
     public static void AddBalance()
     {
-        if (Double.TryParse(Read_message(), out double sum))
+        string balance = Read_message();
+        if (SetUserBalance(balance))
         {
-            CurrentUser.SetBalance(CurrentUser.Balance + sum);
             Print_message("Баланс успешно пополнен, теперь ваш баланс составляет: " + CurrentUser.Balance);
         }
         else

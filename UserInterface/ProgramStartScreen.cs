@@ -1,4 +1,5 @@
 ﻿using static UserInterface.Account;
+using static BusinessLogic.AccountFunctions;
 
 namespace UserInterface
 {

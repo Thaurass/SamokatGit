@@ -1,8 +1,10 @@
 ﻿using static UserInterface.Account;
 using static BusinessLogic.Whoosh;
+using static BusinessLogic.AccountFunctions;
 using static UserInterface.ProgramMenu;
 using static UserInterface.Rent;
 using static FileWorker.FileProcessing;
+using static BusinessLogic.ProgramFunctions;
 
 namespace UserInterface
 {
