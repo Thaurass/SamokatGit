@@ -42,5 +42,12 @@
         public int Index { get => _index; }
 
         public void SetCharge(int current_charge) { _charge = current_charge; }
+
+        public int GetTime()
+        {
+            return Convert.ToInt32(
+                (_charge / (_speed - 5) / 1000) * 60
+            );
+        }
     }
 }
