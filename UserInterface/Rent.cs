@@ -1,6 +1,4 @@
-﻿using static BusinessLogic.Whoosh;
-using static UserInterface.MenuFunctions;
-using static BusinessLogic.AccountFunctions;
+﻿using static UserInterface.MenuFunctions;
 using static BusinessLogic.ProgramFunctions;
 
 namespace UserInterface

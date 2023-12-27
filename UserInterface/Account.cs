@@ -2,7 +2,6 @@ using static UserInterface.ProgramStartScreen;
 using static UserInterface.ProgramMenu;
 using static UserInterface.MenuFunctions;
 using static BusinessLogic.AccountFunctions;
-using BusinessLogic;
 namespace UserInterface;
 
 public class Account

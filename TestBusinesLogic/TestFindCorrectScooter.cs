@@ -3,7 +3,7 @@ using static BusinessLogic.Whoosh;
 
 namespace TestBusinesLogic
 {
-    public class Tests
+    public class TestFindCorrectScooter
     {
         [SetUp]
         public void Setup()
