@@ -5,10 +5,6 @@ namespace TestBusinesLogic
 {
     public class TestFindCorrectScooter
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
 
         [Test]
         public void TestReadScooter()
