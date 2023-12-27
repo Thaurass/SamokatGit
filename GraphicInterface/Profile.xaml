@@ -9,14 +9,14 @@
       Title="Profile">
 
     <Grid Background="White">
-        <Label Content="Здравствуйте Name_User" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Height="51" Width="258" FontSize="18"/>
-        <Label Content="Ваш возраст Profile__Age"             HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,89,0,0"  VerticalAlignment="Top" Height="33" Width="258" FontSize="14"/>
-        <Label Content="Ваш баланс  Profile__Balance"         HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,127,0,0" VerticalAlignment="Top" Height="33" Width="258" FontSize="14"/>
-        <Label Content="Ваш пароль  Profile__Password"        HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,165,0,0" VerticalAlignment="Top" Height="33" Width="258" FontSize="14"/>
+        <Label x:Name="_userName" Content="Здравствуйте Name_User" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Height="51" Width="258" FontSize="18"/>
+        <Label x:Name="_userAge" Content="Ваш возраст Profile__Age"             HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,89,0,0"  VerticalAlignment="Top" Height="33" Width="258" FontSize="14"/>
+        <Label x:Name="_userBalance" Content="Ваш баланс  Profile__Balance"         HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,127,0,0" VerticalAlignment="Top" Height="33" Width="258" FontSize="14"/>
+        <Label x:Name="_userPassword" Content="Ваш пароль  Profile__Password"        HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,165,0,0" VerticalAlignment="Top" Height="33" Width="258" FontSize="14"/>
         <Label Content="Ваша статистика :"                    HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,203,0,0" VerticalAlignment="Top" Height="33" Width="258" FontSize="18"/>
-        <Label Content="Мы вместе проехали Profile__Distance" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,241,0,0" VerticalAlignment="Top" Height="33" Width="258" FontSize="14"/>
-        <Label Content="Время в пути вместе Profile__Time"    HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,279,0,0" VerticalAlignment="Top" Height="33" Width="258" FontSize="14"/>
-        <Label Content="Всего поездок Profile__Trip"          HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,317,0,0" VerticalAlignment="Top" Height="33" Width="258" FontSize="14"/>
+        <Label x:Name="_profileDistance" Content="Мы вместе проехали Profile__Distance" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,241,0,0" VerticalAlignment="Top" Height="33" Width="258" FontSize="14"/>
+        <Label x:Name="_profileTime" Content="Время в пути вместе Profile__Time"    HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,279,0,0" VerticalAlignment="Top" Height="33" Width="258" FontSize="14"/>
+        <Label x:Name="_profileTrip" Content="Всего поездок Profile__Trip"          HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,317,0,0" VerticalAlignment="Top" Height="33" Width="258" FontSize="14"/>
         <Button  Name ="ToMenu"  Content="Назад"              VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="FromProfileToMenu_Click"    Margin="0,355,0,0"/>
 
 

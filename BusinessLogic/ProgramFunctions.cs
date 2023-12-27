@@ -44,6 +44,7 @@ namespace BusinessLogic
         }
         public static void SetData()
         {
+            CurrentUser.AddNumTrips(1);
             CurrentUser.SetTime(CurrentUser.Time + rentalTime);
             CurrentUser.SetDistance(CurrentUser.Distance + (double)(rentalTime / 60) * (CurrentSamokat.Speed - 5) * 1000);
             CurrentSamokat.SetCharge((int)(CurrentSamokat.Charge - (int)((double)(rentalTime / 60) * (CurrentSamokat.Speed - 5) * 1000)));

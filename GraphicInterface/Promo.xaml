@@ -9,9 +9,11 @@
       Title="Promo">
 
     <Grid Background="White">
-        <Label Content="Введите" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Height="92" Width="200" FontSize="18"/>
-        <TextBox HorizontalAlignment="Center"  Margin="0,125,0,0"  Height="30" Width="200" TextWrapping="Wrap" Text="" VerticalAlignment="Top" />
-        <Button  Name ="ToMenu"  Content="Назад"              VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="FromPromoToMenu_Click"    Margin="0,355,0,0"/>
+        <Label Content="Введите промокод" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Height="92" Width="200" FontSize="18"/>
+        <TextBox x:Name="_promo" HorizontalAlignment="Center"  Margin="0,125,0,0"  Height="30" Width="200" TextWrapping="Wrap" Text="" VerticalAlignment="Top" />
+        <Button  Name ="ToMenu"  Content="Назад"              VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="FromPromoToMenu_Click"    Margin="0,195,0,0"/>
+        <Button x:Name="Set_Promo" Content="Добавить промокод" HorizontalAlignment="Center" Margin="0,160,0,0" VerticalAlignment="Top" Width="200" Height="30" Click="Set_Promo_Click"/>
+        <Label x:Name="_errorMsg" Content="" HorizontalAlignment="Center" Margin="0,360,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.489,0.797"/>
 
     </Grid>
 </Page>

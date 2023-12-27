@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using static BusinessLogic.AccountFunctions;
 
 namespace GraphicInterface
 {
@@ -23,6 +13,14 @@ namespace GraphicInterface
         public Profile()
         {
             InitializeComponent();
+
+            _userName.Content = "Здравствуйте " + CurrentUser.Name;
+            _userAge.Content = "Ваш возраст " + CurrentUser.Age;
+            _userBalance.Content = "Ваш баланс " + CurrentUser.Balance;
+            _userPassword.Content = "Ваш пароль " + CurrentUser.Password;
+            _profileDistance.Content = "Мы вместе проехали " + (int)CurrentUser.Distance;
+            _profileTime.Content = "Время в пути вместе " + CurrentUser.Time;
+            _profileTrip.Content = "Всего поездок " + CurrentUser.NumTrips;
         }
 
         private void FromProfileToMenu_Click(object sender, RoutedEventArgs e)
