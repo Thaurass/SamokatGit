@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "L27vJ3WYgOJVv5p5Igk1yrUgYATfJQDh6hggJjZMCf29z8CgIGD4vMk5KAYn5+XgzNbKm9hfTzbQmGeHEgRf0w==",
+  "dgSpecHash": "kxk8c6I6tz/leDP6YL826AAS/DPs+j1gAUNpIW4tbOH6/oJglQNQgYtA96nyOFxImaUiTcoXPH4WhiVNOFl9Hg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\xj48v\\OneDrive\\Документы\\Burn2Code\\VS\\SamokatGit\\TestBusinesLogic\\TestBusinesLogic.csproj",
+  "projectFilePath": "C:\\Users\\xj48v\\OneDrive\\Документы\\VS\\TestBusinesLogic\\TestBusinesLogic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\xj48v\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\xj48v\\.nuget\\packages\\microsoft.codecoverage\\17.8.0\\microsoft.codecoverage.17.8.0.nupkg.sha512",

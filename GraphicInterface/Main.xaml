@@ -9,9 +9,19 @@
       Title="Main">
 
     <Grid Background="White">
-        <Button Name ="Sign" Content="Войти" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30" Width="200" Click="ToSign_Click" Margin="0,201,0,0"/>
-        <Label Content="Добро пожаловать в сервис аренды самокат" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Height="92" Width="381" FontSize="18"/>
-        <Button x:Name ="Reg" Content="Зарегистрироваться" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30" Width="200" Click="ToReg_Click" Margin="0,236,0,0"/>
+
+        <Image Source="./Source/1.jpg" Stretch="UniformToFill"></Image>
+        <Button Name ="Sign" Content="Войти" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30" Width="200" Click="ToSign_Click" Margin="0,201,0,0" BorderBrush="{x:Null}" Foreground="White" FontSize="16">
+            <Button.Background>
+                <ImageBrush ImageSource="/Source/btn3.png" Stretch="Fill"/>
+            </Button.Background>
+        </Button>
+        <Label Content="Добро пожаловать в сервис аренды самокат" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top" Height="92" Width="383" FontSize="18" Foreground="White"/>
+        <Button x:Name ="Reg" Content="Зарегистрироваться" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30" Width="200" Click="ToReg_Click" Margin="0,236,0,0" BorderBrush="{x:Null}" Foreground="White" FontSize="16">
+            <Button.Background>
+                <ImageBrush ImageSource="/Source/btn3.png"/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Page>

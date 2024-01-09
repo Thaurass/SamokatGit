@@ -9,11 +9,24 @@
       Title="Promo">
 
     <Grid Background="White">
-        <Label Content="Введите промокод" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Height="92" Width="200" FontSize="18"/>
+        <Image Source="./Source/1.jpg" Stretch="UniformToFill">
+            <Image.Effect>
+                <BlurEffect/>
+            </Image.Effect>
+        </Image>
+        <Label Content="Введите промокод" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Height="92" Width="200" FontSize="18" Foreground="White"/>
         <TextBox x:Name="_promo" HorizontalAlignment="Center"  Margin="0,125,0,0"  Height="30" Width="200" TextWrapping="Wrap" Text="" VerticalAlignment="Top" />
-        <Button  Name ="ToMenu"  Content="Назад"              VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="FromPromoToMenu_Click"    Margin="0,195,0,0"/>
-        <Button x:Name="Set_Promo" Content="Добавить промокод" HorizontalAlignment="Center" Margin="0,160,0,0" VerticalAlignment="Top" Width="200" Height="30" Click="Set_Promo_Click"/>
-        <Label x:Name="_errorMsg" Content="" HorizontalAlignment="Center" Margin="0,360,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.489,0.797"/>
+        <Button  Name ="ToMenu"  Content="Назад"              VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="FromPromoToMenu_Click"    Margin="0,195,0,0" BorderBrush="{x:Null}" Foreground="White">
+            <Button.Background>
+                <ImageBrush ImageSource="/Source/btn3.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Set_Promo" Content="Добавить промокод" HorizontalAlignment="Center" Margin="0,160,0,0" VerticalAlignment="Top" Width="200" Height="30" Click="Set_Promo_Click" BorderBrush="{x:Null}" Foreground="White">
+            <Button.Background>
+                <ImageBrush ImageSource="/Source/btn3.png"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="_errorMsg" Content="" HorizontalAlignment="Center" Margin="0,360,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.489,0.797" Foreground="White"/>
 
     </Grid>
 </Page>

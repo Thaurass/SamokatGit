@@ -9,14 +9,27 @@
       Title="Sign">
 
     <Grid Background="White">
-        <Label Content="Здравствуйте" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Height="39" Width="200" FontSize="18"/>
+        <Image Source="./Source/2.png" Stretch="UniformToFill">
+            <Image.Effect>
+                <BlurEffect/>
+            </Image.Effect>
+        </Image>
+        <Label Content="Здравствуйте" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="85" Width="284" FontSize="36" Foreground="White"/>
         <TextBox x:Name="_login" HorizontalAlignment="Center"  Margin="0,155,0,0"  Height="30" Width="200" TextWrapping="Wrap" Text="" VerticalAlignment="Top" RenderTransformOrigin="0.521,0.996" FontSize="16" />
         <TextBox x:Name="_password" HorizontalAlignment="Center"  Margin="0,221,0,0"  Height="30" Width="200" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="16" />
-        <Button  Name ="ToMain"  Content="Назад"  VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="FromSignToMain_Click"    Margin="0,291,0,0"/>
-        <Button  Name ="Registr" Content="Войти"  VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="ToSign_Click"           Margin="0,256,0,0"/>
-        <Label x:Name="_errorMsg" Content="" HorizontalAlignment="Center" Margin="0,360,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.489,0.797"/>
-        <Label Content="Введите пароль" HorizontalAlignment="Center" Margin="0,190,0,0" VerticalAlignment="Top"/>
-        <Label Content="Введите логин" HorizontalAlignment="Center" Margin="0,124,0,0" VerticalAlignment="Top"/>
+        <Button  Name ="ToMain"  Content="Назад"  VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="FromSignToMain_Click"    Margin="0,291,0,0" Foreground="White" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/Source/btn3.png"/>
+            </Button.Background>
+        </Button>
+        <Button  Name ="Registr" Content="Войти"  VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="ToSign_Click"           Margin="0,256,0,0" BorderBrush="{x:Null}" Foreground="White">
+            <Button.Background>
+                <ImageBrush ImageSource="/Source/btn3.png"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="_errorMsg" Content="" HorizontalAlignment="Center" Margin="0,360,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.489,0.797" Foreground="White"/>
+        <Label Content="Введите пароль" HorizontalAlignment="Center" Margin="0,190,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Content="Введите логин" HorizontalAlignment="Center" Margin="0,124,0,0" VerticalAlignment="Top" Foreground="White"/>
 
 
     </Grid>

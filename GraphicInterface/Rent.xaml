@@ -9,14 +9,27 @@
       Title="Rent">
 
     <Grid Background="White">
-        <Label Content="Аренда самоката" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Height="92" Width="200" FontSize="18"/>
+        <Image Source="./Source/2.png" Stretch="UniformToFill">
+            <Image.Effect>
+                <BlurEffect/>
+            </Image.Effect>
+        </Image>
+        <Label Content="Аренда самоката" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Height="92" Width="200" FontSize="18" Foreground="White"/>
         <TextBox x:Name="_rentalTime" HorizontalAlignment="Center"  Margin="0,207,0,0"  Height="30" Width="200" TextWrapping="Wrap" Text="" VerticalAlignment="Top" />
-        <Button  Name ="ToMenu"  Content="Назад"              VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="FromRentToMenu_Click"    Margin="0,301,0,0"/>
-        <Button x:Name="RentSamokat" Content="Поехали!" HorizontalAlignment="Center" Margin="0,266,0,0" VerticalAlignment="Top" Width="200" Height="30" Click="Rent_Samokat"/>
+        <Button  Name ="ToMenu"  Content="Назад"              VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="FromRentToMenu_Click"    Margin="0,301,0,0" BorderBrush="{x:Null}" Foreground="White">
+            <Button.Background>
+                <ImageBrush ImageSource="/Source/btn3.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="RentSamokat" Content="Поехали!" HorizontalAlignment="Center" Margin="0,266,0,0" VerticalAlignment="Top" Width="200" Height="30" Click="Rent_Samokat" Foreground="White" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/Source/btn3.png"/>
+            </Button.Background>
+        </Button>
         <ComboBox x:Name="_chooseSamokat" HorizontalAlignment="Center" Margin="0,151,0,0" VerticalAlignment="Top" Width="200" Height="30" IsReadOnly="True" SelectionChanged="Change_Rent_Time"/>
-        <Label Content="Выберите самокат" HorizontalAlignment="Center" Margin="0,125,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.13,0.118"/>
-        <Label x:Name="_labelTime" Content="Введите желаемое время аренды" HorizontalAlignment="Center" Margin="0,181,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.119,0.933"/>
-        <Label x:Name="_errorMsg" Content="&#xA;" HorizontalAlignment="Center" Margin="0,336,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.489,0.797"/>
+        <Label Content="Выберите самокат" HorizontalAlignment="Center" Margin="0,125,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.13,0.118" Foreground="White"/>
+        <Label x:Name="_labelTime" Content="Введите желаемое время аренды" HorizontalAlignment="Center" Margin="0,181,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.119,0.933" Foreground="White"/>
+        <Label x:Name="_errorMsg" Content="&#xA;" HorizontalAlignment="Center" Margin="0,336,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.489,0.797" Foreground="White"/>
 
     </Grid>
 </Page>

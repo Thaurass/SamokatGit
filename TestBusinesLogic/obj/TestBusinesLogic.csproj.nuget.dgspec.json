@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\xj48v\\OneDrive\\Документы\\Burn2Code\\VS\\SamokatGit\\TestBusinesLogic\\TestBusinesLogic.csproj": {}
+    "C:\\Users\\xj48v\\OneDrive\\Документы\\VS\\TestBusinesLogic\\TestBusinesLogic.csproj": {}
   },
   "projects": {
-    "C:\\Users\\xj48v\\OneDrive\\Документы\\Burn2Code\\VS\\SamokatGit\\BusinessLogic\\BusinessLogic.csproj": {
+    "C:\\Users\\xj48v\\OneDrive\\Документы\\VS\\BusinessLogic\\BusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\xj48v\\OneDrive\\Документы\\Burn2Code\\VS\\SamokatGit\\BusinessLogic\\BusinessLogic.csproj",
+        "projectUniqueName": "C:\\Users\\xj48v\\OneDrive\\Документы\\VS\\BusinessLogic\\BusinessLogic.csproj",
         "projectName": "BusinessLogic",
-        "projectPath": "C:\\Users\\xj48v\\OneDrive\\Документы\\Burn2Code\\VS\\SamokatGit\\BusinessLogic\\BusinessLogic.csproj",
+        "projectPath": "C:\\Users\\xj48v\\OneDrive\\Документы\\VS\\BusinessLogic\\BusinessLogic.csproj",
         "packagesPath": "C:\\Users\\xj48v\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xj48v\\OneDrive\\Документы\\Burn2Code\\VS\\SamokatGit\\BusinessLogic\\obj\\",
+        "outputPath": "C:\\Users\\xj48v\\OneDrive\\Документы\\VS\\BusinessLogic\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -64,14 +64,14 @@
         }
       }
     },
-    "C:\\Users\\xj48v\\OneDrive\\Документы\\Burn2Code\\VS\\SamokatGit\\TestBusinesLogic\\TestBusinesLogic.csproj": {
+    "C:\\Users\\xj48v\\OneDrive\\Документы\\VS\\TestBusinesLogic\\TestBusinesLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\xj48v\\OneDrive\\Документы\\Burn2Code\\VS\\SamokatGit\\TestBusinesLogic\\TestBusinesLogic.csproj",
+        "projectUniqueName": "C:\\Users\\xj48v\\OneDrive\\Документы\\VS\\TestBusinesLogic\\TestBusinesLogic.csproj",
         "projectName": "TestBusinesLogic",
-        "projectPath": "C:\\Users\\xj48v\\OneDrive\\Документы\\Burn2Code\\VS\\SamokatGit\\TestBusinesLogic\\TestBusinesLogic.csproj",
+        "projectPath": "C:\\Users\\xj48v\\OneDrive\\Документы\\VS\\TestBusinesLogic\\TestBusinesLogic.csproj",
         "packagesPath": "C:\\Users\\xj48v\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xj48v\\OneDrive\\Документы\\Burn2Code\\VS\\SamokatGit\\TestBusinesLogic\\obj\\",
+        "outputPath": "C:\\Users\\xj48v\\OneDrive\\Документы\\VS\\TestBusinesLogic\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -93,8 +93,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\xj48v\\OneDrive\\Документы\\Burn2Code\\VS\\SamokatGit\\BusinessLogic\\BusinessLogic.csproj": {
-                "projectPath": "C:\\Users\\xj48v\\OneDrive\\Документы\\Burn2Code\\VS\\SamokatGit\\BusinessLogic\\BusinessLogic.csproj"
+              "C:\\Users\\xj48v\\OneDrive\\Документы\\VS\\BusinessLogic\\BusinessLogic.csproj": {
+                "projectPath": "C:\\Users\\xj48v\\OneDrive\\Документы\\VS\\BusinessLogic\\BusinessLogic.csproj"
               }
             }
           }

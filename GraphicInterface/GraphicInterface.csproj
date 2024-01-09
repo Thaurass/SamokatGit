@@ -9,9 +9,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Source\1.jpg" />
+    <None Remove="Source\2.png" />
+    <None Remove="Source\3.png" />
+    <None Remove="Source\btn.png" />
+    <None Remove="Source\btn2.png" />
+    <None Remove="Source\btn3.png" />
+    <None Remove="Source\muz.mp3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj" />
     <ProjectReference Include="..\FileWorker\FileWorker.csproj" />
     <ProjectReference Include="..\UserInterface\UserInterface.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Source\1.jpg" />
+    <Resource Include="Source\2.png" />
+    <Resource Include="Source\3.png" />
+    <Resource Include="Source\btn.png" />
+    <Resource Include="Source\btn2.png" />
+    <Resource Include="Source\btn3.png" />
+    <Resource Include="Source\muz.mp3" />
   </ItemGroup>
 
 </Project>

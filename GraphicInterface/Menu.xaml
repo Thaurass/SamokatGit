@@ -9,13 +9,34 @@
       Title="Menu">
 
     <Grid Background="White">
-        <Label Content="Здравствуйте Name_User" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Height="92" Width="258" FontSize="18"/>
-        <Button  Name ="ToMain"  Content="Выйти в главное меню"  VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="FromMenuToMain_Click"    Margin="0,240,0,0"/>
+        <Image Source="./Source/1.jpg" Stretch="UniformToFill"></Image>
+        <Label Content="Здравствуйте" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Height="92" Width="258" FontSize="18" Foreground="White"/>
+        <Button  Name ="ToMain"  Content="Выйти в главное меню"  VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="FromMenuToMain_Click"    Margin="0,240,0,0" BorderBrush="{x:Null}" Foreground="White">
+            <Button.Background>
+                <ImageBrush ImageSource="/Source/btn3.png"/>
+            </Button.Background>
+        </Button>
 
-        <Button  x:Name ="Profile"  Content="Профиль"           VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="100" Click="FromMenuToProfile_Click"    Margin="700,84,0,0"/>
-        <Button  x:Name ="Balance"  Content="Пополнить баланс"  VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="FromMenuToBalance_Click"    Margin="0,170,0,0"/>
-        <Button  x:Name ="Promo"  Content="Ввести промокод"     VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="FromMenuToPromo_Click"      Margin="0,205,0,0"/>
-        <Button  x:Name ="Rent"  Content="Арендовать самокат"   VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="FromMenuToRent_Click"       Margin="0,135,0,0"/>
+        <Button  x:Name ="Profile"  Content="Профиль"           VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="100" Click="FromMenuToProfile_Click"    Margin="700,84,0,0" BorderBrush="{x:Null}" Foreground="White">
+            <Button.Background>
+                <ImageBrush ImageSource="/Source/btn3.png"/>
+            </Button.Background>
+        </Button>
+        <Button  x:Name ="Balance"  Content="Пополнить баланс"  VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="FromMenuToBalance_Click"    Margin="0,170,0,0" BorderBrush="{x:Null}" Foreground="White">
+            <Button.Background>
+                <ImageBrush ImageSource="/Source/btn3.png"/>
+            </Button.Background>
+        </Button>
+        <Button  x:Name ="Promo"  Content="Ввести промокод"     VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="FromMenuToPromo_Click"      Margin="0,205,0,0" Foreground="White" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/Source/btn3.png"/>
+            </Button.Background>
+        </Button>
+        <Button  x:Name ="Rent"  Content="Арендовать самокат"   VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="FromMenuToRent_Click"       Margin="0,135,0,0" BorderBrush="{x:Null}" Foreground="White">
+            <Button.Background>
+                <ImageBrush ImageSource="/Source/btn3.png"/>
+            </Button.Background>
+        </Button>
 
 
     </Grid>

@@ -9,16 +9,29 @@
       Title="Reg">
 
     <Grid Background="White">
-        <Label Content="Зарегестрируйтесь" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Height="38" Width="200" FontSize="18"/>
+        <Image Source="./Source/1.jpg" Stretch="UniformToFill">
+            <Image.Effect>
+                <BlurEffect/>
+            </Image.Effect>
+        </Image>
+        <Label Content="Зарегестрируйтесь" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Height="38" Width="200" FontSize="18" Foreground="White"/>
         <TextBox x:Name="_login" HorizontalAlignment="Center"  Margin="0,119,0,0"  Height="30" Width="200" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="16" />
         <TextBox x:Name="_password" HorizontalAlignment="Center"  Margin="0,175,0,0"  Height="30" Width="200" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="16" />
-        <Button  Name ="ToMain"  Content="Назад"               VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="FromRegToMain_Click"    Margin="0,301,0,0"/>
-        <Button  Name ="Registr" Content="Зарегистрироваться"  VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="ToRegistr_Click"        Margin="0,266,0,0"/>
-        <Label x:Name="_errorMsg" Content="&#xD;&#xA;" HorizontalAlignment="Center" Margin="0,336,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.489,0.797"/>
+        <Button  Name ="ToMain"  Content="Назад"               VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="FromRegToMain_Click"    Margin="0,301,0,0" BorderBrush="{x:Null}" Foreground="White">
+            <Button.Background>
+                <ImageBrush ImageSource="/Source/btn3.png"/>
+            </Button.Background>
+        </Button>
+        <Button  Name ="Registr" Content="Зарегистрироваться"  VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="ToRegistr_Click"        Margin="0,266,0,0" Foreground="White" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/Source/btn3.png"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="_errorMsg" Content="&#xD;&#xA;" HorizontalAlignment="Center" Margin="0,336,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.489,0.797" Foreground="White"/>
         <TextBox x:Name="_age" HorizontalAlignment="Center" Margin="0,231,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="30" FontSize="16"/>
-        <Label Content="Введите свой возраст" HorizontalAlignment="Center" Margin="0,205,0,0" VerticalAlignment="Top"/>
-        <Label Content="Придумайте пароль" HorizontalAlignment="Center" Margin="0,149,0,0" VerticalAlignment="Top"/>
-        <Label Content="Придумайте логин" HorizontalAlignment="Center" Margin="0,93,0,0" VerticalAlignment="Top"/>
+        <Label Content="Введите свой возраст" HorizontalAlignment="Center" Margin="0,205,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Content="Придумайте пароль" HorizontalAlignment="Center" Margin="0,149,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Content="Придумайте логин" HorizontalAlignment="Center" Margin="0,93,0,0" VerticalAlignment="Top" Foreground="White"/>
 
 
     </Grid>
