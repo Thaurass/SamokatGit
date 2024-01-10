@@ -19,6 +19,7 @@
         <TextBox x:Name="_password" HorizontalAlignment="Center"  Margin="0,221,0,0"  Height="30" Width="200" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="16" />
         <Button  Name ="ToMain"  Content="Назад"  VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="FromSignToMain_Click"    Margin="0,291,0,0" Foreground="White" BorderBrush="{x:Null}">
             <Button.Background>
+                
                 <ImageBrush ImageSource="/Source/btn3.png"/>
             </Button.Background>
         </Button>

@@ -10,6 +10,7 @@
 
     <Grid Background="White">
         <Image Source="./Source/1.jpg" Stretch="UniformToFill"></Image>
+        <Image Source="./Source/3.png" Margin="710,-11,10,358"/>
         <Label Content="Здравствуйте" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Height="92" Width="258" FontSize="18" Foreground="White"/>
         <Button  Name ="ToMain"  Content="Выйти в главное меню"  VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="FromMenuToMain_Click"    Margin="0,240,0,0" BorderBrush="{x:Null}" Foreground="White">
             <Button.Background>

@@ -14,6 +14,7 @@
                 <BlurEffect/>
             </Image.Effect>
         </Image>
+     
         <Label Content="Аренда самоката" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Height="92" Width="200" FontSize="18" Foreground="White"/>
         <TextBox x:Name="_rentalTime" HorizontalAlignment="Center"  Margin="0,207,0,0"  Height="30" Width="200" TextWrapping="Wrap" Text="" VerticalAlignment="Top" />
         <Button  Name ="ToMenu"  Content="Назад"              VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="FromRentToMenu_Click"    Margin="0,301,0,0" BorderBrush="{x:Null}" Foreground="White">
@@ -26,7 +27,49 @@
                 <ImageBrush ImageSource="/Source/btn3.png"/>
             </Button.Background>
         </Button>
-        <ComboBox x:Name="_chooseSamokat" HorizontalAlignment="Center" Margin="0,151,0,0" VerticalAlignment="Top" Width="200" Height="30" IsReadOnly="True" SelectionChanged="Change_Rent_Time"/>
+        <ComboBox x:Name="_chooseSamokat" HorizontalAlignment="Center" Margin="0,151,0,0" VerticalAlignment="Top" Width="200" Height="30" IsReadOnly="True" SelectionChanged="Change_Rent_Time">
+            <StackPanel>
+                <Label x:Name="l1"/>
+                <Image Source="/Source/5.jpg" Width="64" Height="64"/>
+            </StackPanel>
+            <StackPanel>
+                <Label x:Name="l2"/>
+                <Image Source="/Source/4.jpg" Width="64" Height="64"/>
+            </StackPanel>
+            <StackPanel>
+                <Label x:Name="l3"/>
+                <Image Source="/Source/5.jpg" Width="64" Height="64"/>
+            </StackPanel>
+            <StackPanel>
+                <Label x:Name="l4"/>
+                <Image Source="/Source/4.jpg" Width="64" Height="64"/>
+            </StackPanel>
+            <StackPanel>
+                <Label x:Name="l5"/>
+                <Image Source="/Source/5.jpg" Width="64" Height="64"/>
+            </StackPanel>
+            <StackPanel>
+                <Label x:Name="l6"/>
+                <Image Source="/Source/5.jpg" Width="64" Height="64"/>
+            </StackPanel>
+            <StackPanel>
+                <Label x:Name="l7"/>
+                <Image Source="/Source/4.jpg" Width="64" Height="64"/>
+            </StackPanel>
+            <StackPanel>
+                <Label x:Name="l8"/>
+                <Image Source="/Source/4.jpg" Width="64" Height="64"/>
+            </StackPanel>
+            <StackPanel>
+                <Label x:Name="l9"/>
+                <Image Source="/Source/5.jpg" Width="64" Height="64"/>
+            </StackPanel>
+            <StackPanel>
+                <Label x:Name="l10"/>
+                <Image Source="/Source/5.jpg" Width="64" Height="64"/>
+            </StackPanel>
+
+        </ComboBox>
         <Label Content="Выберите самокат" HorizontalAlignment="Center" Margin="0,125,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.13,0.118" Foreground="White"/>
         <Label x:Name="_labelTime" Content="Введите желаемое время аренды" HorizontalAlignment="Center" Margin="0,181,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.119,0.933" Foreground="White"/>
         <Label x:Name="_errorMsg" Content="&#xA;" HorizontalAlignment="Center" Margin="0,336,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.489,0.797" Foreground="White"/>

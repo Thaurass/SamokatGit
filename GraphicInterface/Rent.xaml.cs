@@ -19,7 +19,20 @@ namespace GraphicInterface
         {
             InitializeComponent();
             Messages = Load();
-            _chooseSamokat.ItemsSource = Messages;
+            l1.Content  = Messages[0];
+            l2.Content  = Messages[1];
+            l3.Content  = Messages[2];
+            l4.Content  = Messages[3];
+            l5.Content  = Messages[4];
+            l6.Content  = Messages[5];
+            l7.Content  = Messages[6];
+            l8.Content  = Messages[7];
+            l9.Content  = Messages[8];
+            l10.Content = Messages[9];
+
+
+
+            //_chooseSamokat.ItemsSource = Messages;
         }
 
         private void FromRentToMenu_Click(object sender, RoutedEventArgs e)

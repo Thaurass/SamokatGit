@@ -12,6 +12,8 @@
     <None Remove="Source\1.jpg" />
     <None Remove="Source\2.png" />
     <None Remove="Source\3.png" />
+    <None Remove="Source\4.jpg" />
+    <None Remove="Source\5.jpg" />
     <None Remove="Source\btn.png" />
     <None Remove="Source\btn2.png" />
     <None Remove="Source\btn3.png" />
@@ -28,9 +30,13 @@
     <Resource Include="Source\1.jpg" />
     <Resource Include="Source\2.png" />
     <Resource Include="Source\3.png" />
+    <Resource Include="Source\4.jpg" />
+    <Resource Include="Source\5.jpg" />
     <Resource Include="Source\btn.png" />
     <Resource Include="Source\btn2.png" />
-    <Resource Include="Source\btn3.png" />
+    <Resource Include="Source\btn3.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Source\muz.mp3" />
   </ItemGroup>
 
