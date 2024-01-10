@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "UserInterface/1.0.0": {
+        "dependencies": {
+          "BusinessLogic": "1.0.0",
+          "FileWorker": "1.0.0"
+        },
+        "runtime": {
+          "UserInterface.dll": {}
+        }
+      },
+      "BusinessLogic/1.0.0": {
+        "runtime": {
+          "BusinessLogic.dll": {}
+        }
+      },
+      "FileWorker/1.0.0": {
+        "dependencies": {
+          "BusinessLogic": "1.0.0"
+        },
+        "runtime": {
+          "FileWorker.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "UserInterface/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BusinessLogic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FileWorker/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,35 @@
+﻿<Page x:Class="GraphicInterface.Profile"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GraphicInterface"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Profile">
+
+    <Grid Background="White">
+        <Image Source="./Source/1.jpg" Stretch="UniformToFill">
+            <Image.Effect>
+                <BlurEffect/>
+            </Image.Effect>
+        </Image>
+        <Image Source="./Source/3.png" Stretch="fill" Margin="10,10,640,290" Width="150" Height="150"/>
+        <Label x:Name="_userName" Content="Здравствуйте Name_User" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Height="51" Width="258" FontSize="18" Foreground="White"/>
+        <Label x:Name="_userAge" Content="Ваш возраст Profile__Age"             HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,89,0,0"  VerticalAlignment="Top" Height="33" Width="258" FontSize="14" Foreground="White"/>
+        <Label x:Name="_userBalance" Content="Ваш баланс  Profile__Balance"         HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,127,0,0" VerticalAlignment="Top" Height="33" Width="258" FontSize="14" Foreground="White"/>
+        <Label x:Name="_userPassword" Content="Ваш пароль  Profile__Password"        HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,165,0,0" VerticalAlignment="Top" Height="33" Width="258" FontSize="14" Foreground="White"/>
+        <Label Content="Ваша статистика :"                    HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,203,0,0" VerticalAlignment="Top" Height="33" Width="258" FontSize="18" Foreground="White"/>
+        <Label x:Name="_profileDistance" Content="Мы вместе проехали Profile__Distance" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,241,0,0" VerticalAlignment="Top" Height="33" Width="258" FontSize="14" Foreground="White"/>
+        <Label x:Name="_profileTime" Content="Время в пути вместе Profile__Time"    HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,279,0,0" VerticalAlignment="Top" Height="33" Width="258" FontSize="14" Foreground="White"/>
+        <Label x:Name="_profileTrip" Content="Всего поездок Profile__Trip"          HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,317,0,0" VerticalAlignment="Top" Height="33" Width="258" FontSize="14" Foreground="White"/>
+        <Button  Name ="ToMenu"  Content="Назад"              VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="200" Click="FromProfileToMenu_Click"    Margin="0,355,0,0" Foreground="White" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/Source/btn3.png"/>
+            </Button.Background>
+        </Button>
+
+
+
+    </Grid>
+</Page>
